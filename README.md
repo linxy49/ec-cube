@@ -1,4 +1,4 @@
-# Edit By EC-CUBE 3.x
+# Version Edit By EC-CUBE 3.x
 
 [![Build Status](https://travis-ci.org/EC-CUBE/ec-cube.svg?branch=master)](https://travis-ci.org/EC-CUBE/ec-cube)
 [![Build status](https://ci.appveyor.com/api/projects/status/lg3uh1539cwln2g6?svg=true)](https://ci.appveyor.com/project/ECCUBE/ec-cube)
