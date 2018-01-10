@@ -49,7 +49,7 @@ class EntryType extends AbstractType
                 'required' => true,
             ))
             ->add('kana', 'kana', array(
-                'required' => true,
+                'required' => false,
             ))
             ->add('company_name', 'text', array(
                 'required' => false,
@@ -59,10 +59,14 @@ class EntryType extends AbstractType
                     )),
                 ),
             ))
-            ->add('zip', 'zip')
-            ->add('address', 'address')
+            ->add('zip', 'zip', array(
+                'required' => false,
+            ))
+            ->add('address', 'address', array(
+                'required' => false,
+            ))
             ->add('tel', 'tel', array(
-                'required' => true,
+                'required' => false,
             ))
             ->add('fax', 'tel', array(
                 'required' => false,
