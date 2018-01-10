@@ -46,7 +46,7 @@ class EntryType extends AbstractType
     {
         $builder
             ->add('name', 'name', array(
-                'required' => true,
+                'required' => false,
             ))
             ->add('kana', 'kana', array(
                 'required' => false,
@@ -71,8 +71,12 @@ class EntryType extends AbstractType
             ->add('fax', 'tel', array(
                 'required' => false,
             ))
-            ->add('email', 'repeated_email')
-            ->add('password', 'repeated_password')
+            ->add('email', 'repeated_email', array(
+                'required' => true,
+            ))
+            ->add('password', 'repeated_password', array(
+                'required' => true,
+            ))
             ->add('birth', 'birthday', array(
                 'required' => false,
                 'input' => 'datetime',
