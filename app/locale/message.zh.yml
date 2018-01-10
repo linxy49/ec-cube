@@ -6,27 +6,27 @@ Invalid CSRF token.: もう一度ログイン処理をしてください。
 Your session has timed out, or you have disabled cookies.: もう一度ログイン処理をしてください。
 The uploaded file was too large. Please try to upload a smaller file.: ファイルサイズが大きすぎます。
 
-Name: お名前111
+Name: 姓名(汉字)
 Name01: 姓
 Name02: 名
-Kana: お名前(フリガナ)
+Kana: 姓名(假名)
 Kana01: セイ
 Kana02: メイ
-Zip: 郵便番号
-Address: 住所
-Tel: 電話番号
-Fax: FAX番号
-Email: メールアドレス
-Password: パスワード
-Job: 職業
-Sex: 性別
-Birth: 生年月日
-Company name : 会社名
+Zip: 邮编
+Address: 地址
+Tel: 手机
+Fax: 传真
+Email: 邮箱
+Password: 密码
+Job: 职业
+Sex: 性别
+Birth: 生日
+Company name : 公司名
 Contents: お問い合わせ内容
-Tag: タグ
-form.empty_value: 選択してください
-form.pref.empty_value: 都道府県を選択
-form.job.empty_value: 選択してください
+Tag: 标签
+form.empty_value: 请选择
+form.pref.empty_value: 请选择都道府県
+form.job.empty_value: 请选择
 
 form.contact.address.help: 住所は2つに分けてご記入ください。マンション名は必ず記入してください。
 form.contact.contents.help: ご注文に関するお問い合わせには、必ず「ご注文番号」をご記入くださいますようお願いいたします。
