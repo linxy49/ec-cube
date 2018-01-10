@@ -73,7 +73,17 @@ class EntryType extends AbstractType
             ))
             ->add('email', 'email', array(
                 'required' => true,
+                'constraints' => array(
+                    new Assert\NotBlank(),
+                    // configでこの辺りは変えられる方が良さそう
+                    new Assert\Email(array('strict' => true)),
+                    new Assert\Regex(array(
+                        'pattern' => '/^[[:graph:][:space:]]+$/i',
+                        'message' => 'form.type.graph.invalid',
+                    )),
+                ),
             ))
+
             ->add('password', 'repeated_password', array(
                 'required' => true,
             ))
