@@ -36,17 +36,15 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                 <span class="p-country-name" style="display:none;">Japan</span>
                 {{ form_widget(form._token) }}
                 <div id="top_box__body_inner" class="dl_table">
+
                     <dl id="top_box__email">
                         <dt>{{ form_label(form.email) }}</dt>
-                        <dd>
-                            {% for emailField in form.email %}
-                            <div class="form-group {% if emailField.vars.errors is not empty %}has-error{% endif %}">
-                                {{ form_widget(emailField) }}
-                                {{ form_errors(emailField) }}
-                            </div>
-                            {% endfor %}
+                        <dd class="form-group">
+                                {{ form_widget(form.email) }}
+                                {{ form_errors(form.email) }}
                         </dd>
                     </dl>
+
                     <dl id="top_box__password">
                         <dt>{{ form_label(form.password) }}</dt>
                         <dd>
