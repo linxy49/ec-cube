@@ -28,57 +28,57 @@ form.empty_value: 请选择
 form.pref.empty_value: 请选择都道府県
 form.job.empty_value: 请选择
 
-form.contact.address.help: 住所は2つに分けてご記入ください。マンション名は必ず記入してください。
-form.contact.contents.help: ご注文に関するお問い合わせには、必ず「ご注文番号」をご記入くださいますようお願いいたします。
-form.member.email.invalid: 同じメールアドレスを入力してください。
-form.member.password.invalid: 同じパスワードを入力してください。
-form.type.numeric.invalid: 数字で入力してください。
-form.type.float.invalid : 数字と小数点のみ入力できます。
-form.member.repeated.confirm: 確認のためもう一度入力してください
-form.type.graph.invalid: 半角英数字で入力してください。
+form.contact.address.help: 住所请分开填入。请务必填写公寓名称。
+form.contact.contents.help: 请在咨询时务必注明订单号。
+form.member.email.invalid: 请输入同一邮箱。
+form.member.password.invalid: 请输入相同的密码。
+form.type.numeric.invalid: 请输入数字。
+form.type.float.invalid : 只允许输入数字和小数点。
+form.member.repeated.confirm: 请再次输入。
+form.type.graph.invalid: 请输入半角英数字。
 
-form.type.name.firstname.nothasspace: お名前(名)にスペース、タブ、改行は含めないで下さい。
-form.type.name.lastname.nothasspace: お名前(性)にスペース、タブ、改行は含めないで下さい。
-form.type.customer.company.nothasspace: 会社名にスペース、タブ、改行は含めないで下さい。
+form.type.name.firstname.nothasspace: 名字不能含有空格、Tab或者换行符。
+form.type.name.lastname.nothasspace: 姓不能含有空格、Tab或者换行符。
+form.type.customer.company.nothasspace: 公司名称不能含有空格、Tab或者换行符。
 
-form.type.admin.nottelstyle: 電話番号は半角数字かハイフンのみを入力してください。
-form.type.admin.notkanastyle: お名前(フリガナ)はカタカナで入力してください。
+form.type.admin.nottelstyle: 电话号码只可以输入半角数字或者横线（破折号）。
+form.type.admin.notkanastyle: 请输入名字的全角假名。
 
-form.type.select.notselect: 入力されていません。
+form.type.select.notselect: 还没有输入。
 
-form.type.select.selectisfuturedate: 未来の日付は選択出来ません。
+form.type.select.selectisfuturedate: 不能选择将来的日期。
 
 cart.over.stock: |-
-  選択された商品(%product%)の在庫が不足しております。
-  一度に在庫数を超える購入はできません。
+  您所选择的商品(%product%)库存不足。
+  超过库存，无法购买。
 cart.over.sale_limit: |-
-  選択された商品(%product%)は販売制限しております。
-  一度に販売制限数を超える購入はできません。
+  您所选择的商品(%product%)正在处于限购状态。
+  超过限购数则无法购买。
 cart.zero.stock: |-
-  選択された商品(%product%)の在庫が不足しております。
-  該当商品をカートから削除しました。
-cart.over.price_limit: 商品を購入できる金額の上限を超えております。数量を調整してください。
-cart.product.type.kind: この商品は同時に購入することはできません。
-cart.product.payment.kind: お支払方法が異なるためこの商品は同時に購入することはできません。
-cart.product.delete:  現時点で販売していない商品が含まれておりました。該当商品をカートから削除しました。
-cart.product.not.status: 現時点で購入できない商品が含まれておりました。該当商品をカートから削除しました。
+  您所选择的商品(%product%)库存不足。
+  从购物车中删除该商品了。
+cart.over.price_limit: 已超过商品可购入金额上限。请调整购入数量。
+cart.product.type.kind: 该商品无法同时购入。
+cart.product.payment.kind: 由于支付方式不一样，该商品无法同时购入。
+cart.product.delete:  含有未贩卖的商品。从购物车中删除该商品。
+cart.product.not.status: 含有不可购入商品。从购物车中删除该商品。
 cart.product.not.producttype: |-
-  「%product%」はまだ配送の準備ができておりません。
-  恐れ入りますがお問い合わせページよりお問い合わせください。
+  「%product%」还没有准备配送。
+  非常抱歉，请在咨询面页面进行咨询。
 
-shopping.multiple.delivery: 配送方法が異なる商品が含まれているため、お届け先は複数となります。
-shopping.multiple.quantity.diff: 数量の合計が、カゴの中の数量と異なっています。
+shopping.multiple.delivery: 由于含有不同配送方法的商品，所以会有多次配送。
+shopping.multiple.quantity.diff: 合计数量与购物篮的数量不匹配。
 shopping.delivery.not.producttype: |-
-  配送の準備ができていない商品が含まれております。
-  恐れ入りますがお問い合わせページよりお問い合わせください。
+  含有无法配送的商品。
+  非常抱歉，请在咨询面页面进行咨询。
 
-shopping.total.price: 合計金額が不正です。(¥ totalPrice)
-front.shopping.order.error: 購入処理でエラーが発生しました。
-front.shopping.payment.error: お支払方法が異なるためこの配送方法は選択できません。
-front.shopping.stock.error: 選択された商品の在庫が不足しております。該当商品をカートから削除しました。
-front.shopping.system.error: 購入処理でシステムエラーが発生しました。大変お手数ですが、サイト管理者までご連絡ください。
+shopping.total.price: 合计金额不对。(¥ totalPrice)
+front.shopping.order.error: 购买出错。
+front.shopping.payment.error: 由于支付方式不对，无法选择该配送方法。
+front.shopping.stock.error: 所选商品在库不足。从购物车中删除该商品了。
+front.shopping.system.error: 购入过程中发生系统错误。请与管理员联系。
 
-admin.install.warning: installphpPath は、インストール完了後にファイルを削除してください
+admin.install.warning: installphpPath 、インストール完了後にファイルを削除してください
 
 admin.register.complete: 登録が完了しました。
 admin.register.failed: 登録できませんでした。
