@@ -1,10 +1,10 @@
-Login email: メールアドレス
-Login pass: パスワード
-Login memory: 次回から自動的にログインする
-Bad credentials.: ログインできませんでした。<br>入力内容に誤りがないかご確認ください。
-Invalid CSRF token.: もう一度ログイン処理をしてください。
-Your session has timed out, or you have disabled cookies.: もう一度ログイン処理をしてください。
-The uploaded file was too large. Please try to upload a smaller file.: ファイルサイズが大きすぎます。
+Login email: 邮箱
+Login pass: 密码
+Login memory: 自动登录
+Bad credentials.: 无法登录。<br>请确认是否输入有误。
+Invalid CSRF token.: 请再次登录。
+Your session has timed out, or you have disabled cookies.: 请再次登录。
+The uploaded file was too large. Please try to upload a smaller file.: 文件尺寸太大。
 
 Name: 姓名(汉字)
 Name01: 姓
@@ -34,7 +34,7 @@ form.member.email.invalid: 请输入同一邮箱。
 form.member.password.invalid: 请输入相同的密码。
 form.type.numeric.invalid: 请输入数字。
 form.type.float.invalid : 只允许输入数字和小数点。
-form.member.repeated.confirm: 请再次输入。
+form.member.repeated.confirm: 为了确认，请再次输入。
 form.type.graph.invalid: 请输入半角英数字。
 
 form.type.name.firstname.nothasspace: 名字不能含有空格、Tab或者换行符。
