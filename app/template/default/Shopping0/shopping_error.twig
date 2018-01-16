@@ -21,22 +21,25 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #}
 {% extends 'default_frame.twig' %}
 
-{% set body_class = 'registration_page' %}
+{% set body_class = 'cart_page' %}
 
 {% block main %}
-    <h1 class="page-heading">新会员注册（完了）</h1>
-    <div id="activate_box" class="container-fluid">
-        <div id="deliveradd_input" class="row">
-            <div id="activate_box__body" class="col-sm-10 col-sm-offset-1">
-                <div id="activate_box__message" class="complete_message">
-                    <h2 class="heading01">登录完成。</h2>
-                    <p>祝您购物愉快。</p>
-                    <p>今后还请多多关照。</p>
+    <h1 class="page-heading">購入エラー</h1>
+    <div id="error_wrap" class="container-fluid">
+        <div id="error_box" class="row">
+            <div id="error_box__body" class="col-sm-10 col-sm-offset-1">
+                {% for error in app.session.flashbag.get('eccube.front.error')  %}
+                <div id="error_box__error_message-{{ loop.index }}" class="message">
+                    {{ error|trans|nl2br }}
                 </div>
-                <div id="activate_box__footer" class="row no-padding">
-                    <div id="activate_box__button_menu" class="btn_group col-sm-offset-4 col-sm-4">
-                        <p id="activate_box__top_button" >
-                            <a href="{{ url('index') }}" class="btn btn-info btn-block">前往主页</a>
+                {% endfor %}
+                <div id="error_box__footer" class="row no-padding">
+                    <div id="error_box__button_menu" class="btn_group col-sm-offset-4 col-sm-4">
+                        <p id="error_box__top_button">
+                            <a href="{{ url('homepage') }}" class="btn btn-info btn-block">トップページへ</a>
+                        </p>
+                        <p id="error_box__back_button">
+                            <a href="{{ url('cart') }}" class="btn btn-info btn-block">カートに戻る</a>
                         </p>
                     </div>
                 </div>

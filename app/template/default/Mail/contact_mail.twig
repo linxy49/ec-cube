@@ -1,0 +1,36 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) 2000-2015 LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#}
+　※本邮件为自动发送的邮件。
+
+尊敬的 {{ data.name01 }} {{ data.name02 }}
+
+我们将对您的以下查询进行确认，请耐心等待我们的回复。
+
+■姓名　：{{ data.name01 }} {{ data.name02 }}{% if data.kana01 or data.kana02 %} ({{ data.kana01 }} {{ data.kana02 }}){% endif %}
+■邮编：{% if data.zip01 and data.zip02 %}〒{{ data.zip01 }} - {{ data.zip02 }}{% endif %}
+
+■地址　　：{% if data.pref.name is defined %} {{ data.pref.name }}{% endif %}{{ data.addr01 }}{{ data.addr02 }}
+■电话号码：{{ data.tel01 }} - {{ data.tel02 }} - {{ data.tel03 }}
+■邮箱：{{ data.email }}
+■咨询内容
+
+{{ data.contents }}

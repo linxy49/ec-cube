@@ -1,0 +1,110 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) 2000-2015 LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#}
+尊敬的 {{ Order.name01 }} {{ Order.name02 }}
+
+{{ header }}
+
+************************************************
+　请求金额
+************************************************
+
+订单号：{{ Order.id }}
+支付合计：{{ Order.payment_total|price}}
+支付方式：{{ Order.payment_method }}
+信息：{{ Order.message }}
+
+
+************************************************
+　订单明细
+************************************************
+
+{% for OrderDetail in Order.OrderDetails %}
+商品号码: {{ OrderDetail.product_code }}
+商品名称: {{ OrderDetail.product_name }}  {{ OrderDetail.classcategory_name1 }}  {{ OrderDetail.classcategory_name2 }}
+单价： {{ calc_inc_tax(OrderDetail.price, OrderDetail.tax_rate, OrderDetail.tax_rule)|price }}
+数量： {{ OrderDetail.quantity|number_format }}
+
+{% endfor %}
+
+-------------------------------------------------
+小　计 {{ Order.subtotal|price }}{% if Order.tax > 0 %}(其中含消费税 {{ Order.tax|price }}){% endif %}
+
+手续费 {{ Order.charge|price }}
+邮  费 {{ Order.delivery_fee_total|price}}
+{% if Order.discount > 0 %}
+打折 {{ (0 - Order.discount)|price}}
+{% endif %}
+============================================
+合 计 {{ Order.payment_total|price }}
+
+************************************************
+　买家信息
+************************************************
+姓名　：{{ Order.name01 }} {{ Order.name02 }} 様
+假名：{{ Order.kana01 }} {{ Order.kana02 }} 様
+{% if Order.company_name %}
+公司名称　：{{ Order.company_name }}
+{% endif %}
+{% if app.config.form_country_enable %}
+国家　　　：{{ Order.Country }}
+ZIPCODE ：{{ Order.zip_code }}
+{% endif %}
+邮编：〒{{ Order.zip01 }}-{{ Order.zip02 }}
+地址　　：{{ Order.Pref.name }}{{ Order.addr01 }}{{ Order.addr02 }}
+电话号码：{{ Order.tel01 }}-{{ Order.tel02 }}-{{ Order.tel03 }}
+FAX号码 ：{{ Order.fax01 }}-{{ Order.fax02 }}-{{ Order.fax03 }}
+
+邮箱地址：{{ Order.email }}
+
+************************************************
+　配送信息
+************************************************
+
+{%  for Shipping in Order.Shippings %}
+◎收货{% if Order.multiple %}{{ loop.index }}{% endif %}
+
+姓名　：{{ Shipping.name01 }} {{ Shipping.name02 }}
+假名：{{ Shipping.kana01 }} {{ Shipping.kana02 }}
+{% if Shipping.company_name %}
+公司名称　：{{ Shipping.company_name }}
+{% endif %}
+{% if app.config.form_country_enable %}
+    　国家　　　：{{ Shipping.Country.name }}
+    　ZIPCODE ：{{ Shipping.zip_code }}
+{% endif %}
+邮编：〒{{ Shipping.zip01 }}-{{ Shipping.zip02 }}
+地址　　：{{ Shipping.Pref.name }}{{ Shipping.addr01 }}{{ Shipping.addr02 }}
+电话号码：{{ Shipping.tel01 }}-{{ Shipping.tel02 }}-{{ Shipping.tel03 }}
+FAX号码：{{ Shipping.fax01 }}-{{ Shipping.fax02 }}-{{ Shipping.fax03 }}
+
+到达日：{{ Shipping.shipping_delivery_date is empty ? '不指定' : Shipping.shipping_delivery_date|date_format }}
+到达时间：{{ Shipping.shipping_delivery_time|default('不指定') }}
+
+{%  for ShipmentItem in Shipping.ShipmentItems %}
+商品代码: {{ ShipmentItem.product_code }}
+商品名称: {{ ShipmentItem.product_name }}  {{ ShipmentItem.classcategory_name1 }}  {{ ShipmentItem.classcategory_name2 }}
+数量：{{ ShipmentItem.quantity|number_format }}
+
+{% endfor %}
+{% endfor %}
+
+{{ footer }}

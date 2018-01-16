@@ -1,0 +1,71 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) 2000-2015 LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#}
+{% extends 'default_frame.twig' %}
+
+{% set body_class = 'cart_page' %}
+
+{% block main %}
+    <h1 class="page-heading">购物成功</h1>
+    <div id="complete_wrap" class="container-fluid">
+        <div id="complete_flow_box" class="row">
+            <div id="complete_flow_box__body" class="col-md-12">
+                {% if is_granted('ROLE_USER') %}
+                <div id="complete_flow_box__flow_state" class="flowline step3">
+                {% else %}
+                <div id="complete_flow_box__flow_state" class="flowline step4">
+                {% endif %}
+                    <ul id="complete_flow_box__flow_state_list" class="clearfix">
+                        <li><span class="flow_number">1</span><br>购物车里的商品</li>
+                    {% if is_granted('ROLE_USER') %}
+                        <li><span class="flow_number">2</span><br>确认订单内容</li>
+                        <li class="active"><span class="flow_number">3</span><br>完了</li>
+                    {% else %}
+                        <li><span class="flow_number">2</span><br>客人信息</li>
+                        <li><span class="flow_number">3</span><br>确认订单内容</li>
+                        <li class="active"><span class="flow_number">4</span><br>完了</li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+
+        <div id="deliveradd_input" class="row">
+            <div id="deliveradd_input_box" class="col-sm-10 col-sm-offset-1">
+                <div id="deliveradd_input_box__message" class="complete_message">
+                    <h2 class="heading01">感谢您的购买</h2>
+                    <p>订单确认的邮件已发出。<br />
+                        <strong>购入号码：{{ orderId }}</strong>{% endif %}</p>
+                </div>
+                <div id="deliveradd_input_box__top_button" class="row no-padding">
+                    <div class="btn_group col-sm-offset-4 col-sm-4">
+                        <p>
+                            <a href="{{ url('homepage') }}" class="btn btn-info btn-block">前往主页</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </div>
+{% endblock %}
