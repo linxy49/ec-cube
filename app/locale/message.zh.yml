@@ -78,130 +78,130 @@ front.shopping.payment.error: 由于支付方式不对，无法选择该配送�
 front.shopping.stock.error: 所选商品在库不足。从购物车中删除该商品了。
 front.shopping.system.error: 购入过程中发生系统错误。请与管理员联系。
 
-admin.install.warning: installphpPath 、インストール完了後にファイルを削除してください
+admin.install.warning: 请在安装完成后删除installphpPath
 
-admin.register.complete: 登録が完了しました。
-admin.register.failed: 登録できませんでした。
-admin.delete.complete: 削除が完了しました。
-admin.delete.failed: 削除できませんでした。
-admin.delete.warning: 既に削除されています。
-admin.rank.move.complete: ランクの移動が完了しました。
-admin.rank.up.error: ランクを上へ移動できませんでした。
-admin.rank.down.error: ランクを下へ移動できませんでした。
-admin.create.complete: 作成しました。
-admin.save.complete: 保存しました。
+admin.register.complete: 注册完了。
+admin.register.failed: 无法注册。
+admin.delete.complete: 删除完了。
+admin.delete.failed: 无法删除。
+admin.delete.warning: 已经被删除了。
+admin.rank.move.complete: 顺序移动完了。
+admin.rank.up.error: 无法向上移动顺序。
+admin.rank.down.error: 无法向下移动顺序。
+admin.create.complete: 作成了。
+admin.save.complete: 保存了。
 
-admin.order.save.complete: 受注情報を保存しました。
-admin.order.delete.complete: 受注情報を削除しました。
+admin.order.save.complete: 订单已保存。
+admin.order.delete.complete: 订单已删除。
 
 Quantity: 数量
 
-admin.class_name.up.complete: 規格を上へ移動しました。
-admin.class_name.up.error: 規格を上へ移動できませんでした。
-admin.class_name.down.complete: 規格を下へ移動しました。
-admin.class_name.down.error: 規格を下へ移動できませんでした。
-admin.class_name.save.complete: 規格を保存しました。
-admin.class_name.save.error: 規格を保存できませんでした。
-admin.class_name.delete.complete: 規格を削除しました。
-admin.class_name.delete.error: 規格を削除できませんでした。
+admin.class_name.up.complete: 规格已向上移动。
+admin.class_name.up.error: 无法向上移动规格。
+admin.class_name.down.complete: 规格已向下移动。
+admin.class_name.down.error: 无法向下移动规格。
+admin.class_name.save.complete: 规格已保存。
+admin.class_name.save.error: 无法保存规格。
+admin.class_name.delete.complete: 规格已删除。
+admin.class_name.delete.error: 规格无法删除。
 
-admin.class_category.up.complete: 分類を上へ移動しました。
-admin.class_category.up.error: 分類を上へ移動できませんでした。
-admin.class_category.down.complete: 分類を下へ移動しました。
-admin.class_category.down.error: 分類を下へ移動できませんでした。
-admin.class_category.save.complete: 分類を保存しました。
-admin.class_category.save.error: 分類を保存できませんでした。
-admin.class_category.delete.complete: 分類を削除しました。
-admin.class_category.delete.error: 分類を削除できませんでした。
-admin.class_category.delete.hasproduct: この分類は商品で使われているので削除できません。
+admin.class_category.up.complete: 分类已向上移动。
+admin.class_category.up.error: 分类无法向上移动。
+admin.class_category.down.complete: 分类已向下移动。
+admin.class_category.down.error: 分类无法向下移动。
+admin.class_category.save.complete: 分类已保存。
+admin.class_category.save.error: 分类无法保存。
+admin.class_category.delete.complete: 分类已删除。
+admin.class_category.delete.error: 分类无法删除。
+admin.class_category.delete.hasproduct: 这个分类商品已经被使用了，无法删除。
 
-admin.category.up.complete: カテゴリを上へ移動しました。
-admin.category.up.error: カテゴリを上へ移動できませんでした。
-admin.category.down.complete: カテゴリを下へ移動しました。
-admin.category.down.error: カテゴリを下へ移動できませんでした。
-admin.category.save.complete: カテゴリを保存しました。
-admin.category.save.error: カテゴリを保存できませんでした。
-admin.category.delete.complete: カテゴリを削除しました。
-admin.category.delete.error: カテゴリを削除できませんでした。
+admin.category.up.complete: 种类已向上移动。
+admin.category.up.error: 种类无法向上移动。
+admin.category.down.complete: 种类已向下移动。
+admin.category.down.error: 种类无法向下移动。
+admin.category.save.complete: 种类已保存。
+admin.category.save.error: 种类无法保存。
+admin.category.delete.complete: 种类已删除。
+admin.category.delete.error: 种类无法删除。
 
-admin.product.search.stock: 在庫なし
-admin.product.product_class.save.complete: 商品規格を登録しました。
-admin.product.product_class.update.complete: 商品規格を更新しました。
-admin.product.product_class.delete.complete: 商品規格を削除しました。
-admin.product.copy.complete: 商品を複製しました。
-admin.product.copy.failed: 商品の複製に失敗しました。
-admin.product.csv_import.save.complete: 商品登録CSVファイルをアップロードしました。
-admin.category.csv_import.save.complete: カテゴリ登録CSVファイルをアップロードしました。
+admin.product.search.stock: 没有库存
+admin.product.product_class.save.complete: 商品規格已登录。
+admin.product.product_class.update.complete: 商品規格已更新。
+admin.product.product_class.delete.complete: 商品規格已删除。
+admin.product.copy.complete: 商品已复制。
+admin.product.copy.failed: 商品复制失败。
+admin.product.csv_import.save.complete: 商品登录CSV文件已上传。
+admin.category.csv_import.save.complete: 种类登录CSV文件已上传。
 
-admin.customer.save.complete: 会員情報を保存しました。
-admin.customer.save.failed: 会員情報を保存できませんでした。
-admin.customer.delete.complete: 会員情報を削除しました。
-admin.customer.resend.complete: 仮会員登録メールを送信しました。
+admin.customer.save.complete: 会员情報已保存。
+admin.customer.save.failed: 会员情報无法保存。
+admin.customer.delete.complete: 会员情報已删除。
+admin.customer.resend.complete: 临时会员登录邮件已发送。
 
-admin.news.up.complete: 新着情報を上へ移動しました。
-admin.news.up.error: 新着情報を上へ移動できませんでした。
-admin.news.down.complete: 新着情報を下へ移動しました。
-admin.news.down.error: 新着情報を下へ移動できませんでした。
-admin.news.save.complete: 新着情報を保存しました。
-admin.news.save.error: 新着情報を保存できませんでした。
-admin.news.delete.complete: 新着情報を削除しました。
-admin.news.delete.error: 新着情報を削除できませんでした。
+admin.news.up.complete: 最新消息已向上移动。
+admin.news.up.error: 最新消息无法向上移动。
+admin.news.down.complete: 最新消息已向下移动。
+admin.news.down.error: 最新消息无法向下移动。
+admin.news.save.complete: 最新消息已保存。
+admin.news.save.error: 最新消息无法保存。
+admin.news.delete.complete: 最新消息已删除。
+admin.news.delete.error: 最新消息无法删除。
 
-admin.member.up.complete: メンバーを上へ移動しました。
-admin.member.up.error: メンバーを上へ移動できませんでした。
-admin.member.down.complete: メンバーを下へ移動しました。
-admin.member.down.error: メンバーを下へ移動できませんでした。
-admin.member.save.complete: メンバーを保存しました。
-admin.member.save.error: メンバーを保存できませんでした。
-admin.member.delete.complete: メンバーを削除しました。
-admin.member.delete.error: メンバーを削除できませんでした。
+admin.member.up.complete: 成员已向上移动
+admin.member.up.error: 成员无法向上移动
+admin.member.down.complete: 成员已向下移动。
+admin.member.down.error: 成员无法向下移动。
+admin.member.save.complete: 成员已保存。
+admin.member.save.error: 成员无法保存。
+admin.member.delete.complete: 成员已删除。
+admin.member.delete.error: 成员无法删除。
 
-admin.shop.save.complete: 基本情報を保存しました。
-admin.shop.save.error: 基本情報を保存できませんでした。
-admin.shop.download.invalid: ダウンロード無制限でない場合、ダウンロード可能日数を入力してください。
-admin.shop.latitude.invalid: -90.000000～90.000000の範囲で指定してください
-admin.shop.longitude.invalid: -180.000000～180.000000の範囲で指定してください
+admin.shop.save.complete: 基本信息已保存。
+admin.shop.save.error: 基本信息无法保存。
+admin.shop.download.invalid: 如果没有限制下载，请输入下载可能的天数。
+admin.shop.latitude.invalid: 请指定范围-90.000000～90.000000
+admin.shop.longitude.invalid: 请指定范围-180.000000～180.000000
 
-admin.shop.tax.save.complete: 税率設定情報を保存しました。
-admin.shop.tax.delete.complete: 税率設定情報を削除しました。
+admin.shop.tax.save.complete: 税率设定信息已保存。
+admin.shop.tax.delete.complete: 税率设定信息已删除。
 
-admin.shop.mail.save.complete: メールテンプレート情報を保存しました。
-admin.shop.mail.save.error: メールテンプレートの新規登録はできません。
+admin.shop.mail.save.complete: 邮件模版信息已保存。
+admin.shop.mail.save.error: 无法登录新的邮件模版。
 
-admin.shop.csv.save.complete: CSV出力を設定しました。
+admin.shop.csv.save.complete: CSV出力已设定。
 
-admin.content.template.save.complete: テンプレート設定を保存しました。
-admin.content.template.add.complete: テンプレートファイルをアップロードしました。
-admin.content.template.delete.complete: テンプレートを削除しました。
-admin.content.template.delete.default.error: デフォルトテンプレートは削除できません。
-admin.content.template.delete.current.error: 現在設定中のテンプレートは削除できません。
+admin.content.template.save.complete: 模版设定已保存。
+admin.content.template.add.complete: 模版文件已上传。
+admin.content.template.delete.complete: 模版已删除。
+admin.content.template.delete.default.error: 无法删除默认模版。
+admin.content.template.delete.current.error: 无法删除現在设定中的模版。
 
-admin.content.cache.save.complete: キャッシュを削除しました。
+admin.content.cache.save.complete: 缓存已删除。
 
-admin.system.security.save.complete: セキュリティ設定を保存しました。
-admin.system.security.route.dir.complete: 管理画面のURLを変更しましたので再ログインをしてください。
+admin.system.security.save.complete: 安全设定已保存。
+admin.system.security.route.dir.complete: 管理页面的URL已经变更了，请重新登录。
 
-admin.system.authority.save.complete: 権限設定を保存しました。
+admin.system.authority.save.complete: 权限设定已保存。
 
-admin.plugin.enable.complete: プラグインを有効にしました。
-admin.plugin.disable.complete: プラグインを無効にしました。
-admin.plugin.already.enable: すでに有効化されています。
-admin.plugin.already.disable: すでに無効化されています。
-admin.plugin.uninstall.complete: プラグインを削除しました。
-admin.plugin.update.complete: 更新が完了しました。
-plugin already installed.: プラグインは既にインストールされています。
-admin.plugin.authentication.setting.complete: 認証キーを設定しました。
-admin.plugin.install.complete: プラグインをインストールしました。
-admin.plugin.download.pem.complete: 証明書ファイルを設定しました。
-admin.plugin.download.pem.error: 証明書ファイルの設定ができませんでした。
+admin.plugin.enable.complete: 插件已有效。
+admin.plugin.disable.complete: 插件已无效。
+admin.plugin.already.enable: 已经有效了。
+admin.plugin.already.disable: 已经无效了。
+admin.plugin.uninstall.complete: 插件已删除。
+admin.plugin.update.complete: 更新完了。
+plugin already installed.: 插件已安装。
+admin.plugin.authentication.setting.complete: 认证键已设定。
+admin.plugin.install.complete: 插件已安装。
+admin.plugin.download.pem.complete: 证明书文件已设定。
+admin.plugin.download.pem.error: 证明书文件无法设定。
 
-admin.preview.register.complete: プレビューを登録しました
+admin.preview.register.complete: 预览已登录。
 
-admin.change_password.save.complete: パスワードを変更しました。
-admin.change_password.save.error: パスワードを変更できませんでした。
+admin.change_password.save.complete: 密码已变更。
+admin.change_password.save.error: 密码无法变更。
 
-admin_title: 'EC-CUBE 管理機能' # 未使用
-normal_price_title: 通常価格    # 未使用
-sale_price_title: 販売価格
+admin_title: 'EC-CUBE 管理功能' # 未使用
+normal_price_title: 通常价格    # 未使用
+sale_price_title: 贩卖价格
 form.address1.help: '市区町村名 (例：千代田区神田神保町)'
-form.address2.help: '番地・ビル名 (例：1-3-5)'
+form.address2.help: '番地・大楼名 (例：1-3-5)'
