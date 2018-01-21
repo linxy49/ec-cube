@@ -1,27 +1,27 @@
 <script>
-    // 商品規格情報. 規格2のプルダウンリストの設定に利用する,
+    // 商品规格信息. 规格2のプルダウンリストの设定に利用する,
     var productsClassCategories = {
         {% for Product in pagination %}
         "{{ Product.id|escape('js') }}": {{ Product.class_categories|json_encode|raw }}{% if loop.last == false %}, {% endif %}
         {% endfor %}
     };
-    // 規格1が選択された際に, 規格2のプルダウンリストを設定する,
+    // 规格1が选择された際に, 规格2のプルダウンリストを设定する,
     function fnSetClassCategory2(select, product_id) {
-        // 規格1の要素を取得
+        // 规格1の要素を取得
         var $sele1 = $(select);
-        // 規格2の要素を取得
+        // 规格2の要素を取得
         var $sele2 = $sele1.parent().find('select[name=classcategory_id2]');
 
-        // 規格1の選択肢
+        // 规格1の选择肢
         var classcat_id1 = $sele1.val() ? $sele1.val() : '';
 
-        // 規格2がある場合は選択肢を書き換える
+        // 规格2がある場合は选择肢を書き換える
         if ($sele2 && $sele2.length) {
-            // 規格2の選択肢をクリア
+            // 规格2の选择肢をクリア
             $sele2.children().remove();
             var classcat2 = productsClassCategories[product_id][classcat_id1];
 
-            // 規格2の要素を設定
+            // 规格2の要素を设定
             for (var key in classcat2) {
                 if (classcat2.hasOwnProperty(key)) {
                     var id = classcat2[key].classcategory_id2;
@@ -35,9 +35,9 @@
     // 受注明細行を追加する.
     // 受注明細行のレコード数カウンタ(order_details_count)は, edit.twig側で定義している.
     function fnAddOrderDetail($row, product_id) {
-        // 規格1の要素を取得
+        // 规格1の要素を取得
         var $sele1 = $row.find('select[name=classcategory_id1]');
-        // 規格2の要素を取得
+        // 规格2の要素を取得
         var $sele2 = $row.find('select[name=classcategory_id2]');
 
         var product_class_id = null;
@@ -46,19 +46,19 @@
         var product_code = null;
         var tax_rate = null;
 
-        // 規格なし商品の場合
+        // 规格なし商品的情况
         if (!$sele1.length && !$sele2.length) {
             var product = productsClassCategories[product_id]['__unselected2']['#'];
             product_class_id = product['product_class_id'];
             price = product['price02'];
             product_code = product['product_code'];
-        // 規格が登録されている商品の場合
+        // 规格が登录されている商品的情况
         } else if ($sele1.length) {
             if ($sele2.length) {
                 var class_category_id1 = $sele1.val();
                 var class_cateogry_id2 = $sele2.val();
                 if (class_category_id1 == '__unselected' || !class_cateogry_id2) {
-                    alert('規格を選択してください。')
+                    alert('请选择规格。')
                     return;
                 }
                 var product = productsClassCategories[product_id][class_category_id1]['#' + class_cateogry_id2];
@@ -68,7 +68,7 @@
             } else {
                 var class_category_id1 = $sele1.val();
                 if (class_category_id1 == '__unselected') {
-                    alert('規格を選択してください。')
+                    alert('请选择规格。')
                     return;
                 }
                 var product = productsClassCategories[product_id][class_category_id1]['#'];
@@ -165,7 +165,7 @@
         return false;
     }
 
-    // 商品検索
+    // 商品搜索
     $('#product_pagination a').on('click', function(event) {
         var list = $('#searchProductModalList');
         list.children().remove();

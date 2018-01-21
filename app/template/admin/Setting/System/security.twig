@@ -23,8 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['setting', 'system', 'security'] %}
 
-{% block title %}システム設定{% endblock %}
-{% block sub_title %}セキュリティ管理{% endblock %}
+{% block title %}系统设定{% endblock %}
+{% block sub_title %}安全管理{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -35,41 +35,41 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <div  id="security_wrap" class="col-md-9">
             <div id="security_box" class="box">
                 <div id="security_box__header" class="box-header">
-                    <h3 class="box-title">セキュリティ機能設定</h3>
+                    <h3 class="box-title">安全功能设定</h3>
                 </div><!-- /.box-header -->
                 <div id="security_box__body" class="box-body form-horizontal">
                         <div id="security_dir_box" class="form-group">
-                            <label class="col-sm-3 col-lg-2 control-label">ディレクトリ名</label>
+                            <label class="col-sm-3 col-lg-2 control-label">文件夹名</label>
                             <div id="security_box__route_dir" class="col-sm-3 col-lg-3">
                                 {{ form_widget(form.admin_route_dir) }}
                                 {{ form_errors(form.admin_route_dir) }}
                             </div>
                         </div>
                         <div id="security_ip_box" class="form-group">
-                            <label class="col-sm-3 col-lg-2 control-label">IP制限</label>
+                            <label class="col-sm-3 col-lg-2 control-label">IP限制</label>
                             <div id="security_box__allow_host" class="col-sm-9 col-lg-10">
                                 {{ form_widget(form.admin_allow_host, {'attr': {'rows': '7', 'aria-describedby': 'helpBlock'}}) }}
                                 {{ form_errors(form.admin_allow_host) }}
-                                <span id="helpBlock" class="help-block">※管理機能へのアクセスを特定のIPアドレスからの接続のみに制限します。
-                                    アクセスを許可するIPアドレスを1行づつ入力してください。何も入力しない場合は全てを許可します。</span>
+                                <span id="helpBlock" class="help-block">※设定成特定的IP地址才能访问管理功能。
+                                    请逐行输入允许访问的IP地址。如果都没有输入的情况下默认为全部都能访问。</span>
                             </div>
                         </div>
-                </div><!-- /.box-body --> 
+                </div><!-- /.box-body -->
             </div><!-- /.box -->
             <div id="site_security_box" class="box">
                 <div id="site_security_box__header" class="box-header">
-                    <h3 class="box-title">サイトセキュリティ設定</h3>
+                    <h3 class="box-title">网站安全设定</h3>
                 </div><!-- /.box-header -->
                 <div id="site_security_box__body" class="box-body form-horizontal">
                     <div id="site_security_box__force_ssl" class="form-group">
-                        <label class="col-sm-3 col-lg-2 form-inline">SSL制限</label>
+                        <label class="col-sm-3 col-lg-2 form-inline">SSL限制</label>
                         <div class="col-sm-9 col-lg-10">
                             {% if app.request.secure %}
                                 {{ form_widget(form.force_ssl) }}
                                 {{ form_errors(form.force_ssl) }}
                             {% else %}
                                 {{ form_widget(form.force_ssl, {'attr': {'disabled': 'disabled'}}) }}
-                                <p class="text-danger">httpsからの接続でなければSSL制限を設定できません。</p>
+                                <p class="text-danger">如果不是来自https的访问的话则无法SSL限制。</p>
                             {% endif %}
                         </div>
                     </div>
@@ -91,13 +91,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                     <div id="common_button_box__body" class="box-body">
                         <div id="common_button_box__edit_button" class="row text-center">
                             <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
-                                <button class="btn btn-primary btn-block btn-lg" type="submit">設定</button>
+                                <button class="btn btn-primary btn-block btn-lg" type="submit">设定</button>
                             </div>
                         </div>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div>
-        </div><!-- /.col --> 
+        </div><!-- /.col -->
     </form>
 </div>
 {% endblock %}

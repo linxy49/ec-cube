@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['content', 'news'] %}
 
 {% block title %}内容管理{% endblock %}
-{% block sub_title %}新着情報管理{% endblock %}
+{% block sub_title %}最新消息管理{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -33,7 +33,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <div id="news_list_box" class="col-md-12">
             <div id="news_list_box__body" class="box">
                 <div id="news_list_box__header" class="box-header">
-                    <h3 class="box-title">新着情報管理</h3>
+                    <h3 class="box-title">最新消息管理</h3>
                 </div><!-- /.box-header -->
                 <div id="news_list_box__body_inner" class="box-body">
                     <form name="form1" id="form1" method="post" action="">
@@ -59,7 +59,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><svg class="cb cb-ellipsis-h"> <use xlink:href="#cb-ellipsis-h" /></svg></a>
                                                     <ul id="news_list_box__menu--{{ News.id }}" class="dropdown-menu dropdown-menu-right">
                                                         <li><a href="{{ url('admin_content_news_edit', {id: News.id}) }}" >编辑</a></li>
-                                                        <li><a href="{{ url('admin_content_news_delete', {id: News.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="この新着情報を削除してもよろしいですか？">删除</a></li>
+                                                        <li><a href="{{ url('admin_content_news_delete', {id: News.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="确定要删除这条最新消息吗？">删除</a></li>
                                                         {% if loop.first == false %}
                                                             <li>
                                                                 <a href="{{ url('admin_content_news_up', {id: News.id}) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">上一页</a>

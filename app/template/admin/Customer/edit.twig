@@ -43,7 +43,7 @@
         <div id="detail_wrap" class="col-md-9">
             <div id="detail_box" class="box accordion">
                 <div id="detail_box__header" class="box-header toggle active">
-                    <h3 class="box-title">会员情报<svg class="cb cb-angle-down icon_down"> <use xlink:href="#cb-angle-down" /></svg></h3>
+                    <h3 class="box-title">会员信息<svg class="cb cb-angle-down icon_down"> <use xlink:href="#cb-angle-down" /></svg></h3>
                 </div><!-- /.box-header -->
                 <div id="detail_box__body" class="box-body accpanel" style="display: block;">
                     <div class="form-horizontal">
@@ -196,7 +196,7 @@
             {% if Customer.id %}
             <div id="history_box" class="box accordion">
                 <div id="history_box__toggle" class="box-header toggle">
-                    <h3 class="box-title">購入履歴<svg class="cb cb-angle-down icon_down"> <use xlink:href="#cb-angle-down" /></svg></h3>
+                    <h3 class="box-title">购买记录<svg class="cb cb-angle-down icon_down"> <use xlink:href="#cb-angle-down" /></svg></h3>
                 </div><!-- /.box-header -->
                 <div id="history_box__body" class="box-body accpanel">
                     {% if Customer.Orders|length > 0 %}
@@ -205,11 +205,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr id="history_box__list_header">
-                                        <th id="history_box__header_order_date">注文日時</th>
-                                        <th id="history_box__header_order_id">受注番号</th>
-                                        <th id="history_box__header_order_total">購入金額</th>
-                                        <th id="history_box__header_commit_date">発送日</th>
-                                        <th id="history_box__header_payment_method">支払方法</th>
+                                        <th id="history_box__header_order_date">购买日期与时间</th>
+                                        <th id="history_box__header_order_id">订单编号</th>
+                                        <th id="history_box__header_order_total">购入金额</th>
+                                        <th id="history_box__header_commit_date">发送日期</th>
+                                        <th id="history_box__header_payment_method">支付方法</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -225,7 +225,7 @@
                                             {{ Order.total|price }}
                                         </td>
                                         <td id="history_box__commit_date--{{ Order.id }}" class="member_mail">
-                                            {{ Order.commit_date|date_format|default('未発送') }}
+                                            {{ Order.commit_date|date_format|default('未发送') }}
                                         </td>
                                         <td id="history_box__payment_method--{{ Order.id }}" class="member_mail">
                                             {{ Order.payment_method }}
@@ -237,7 +237,7 @@
                         </div>
                     </div>
                     {% else %}
-                    <div id="history_box__header" class="data-empty"><svg class="cb cb-inbox"> <use xlink:href="#cb-inbox" /></svg><p>データはありません</p>
+                    <div id="history_box__header" class="data-empty"><svg class="cb cb-inbox"> <use xlink:href="#cb-inbox" /></svg><p>无数据</p>
                     </div>
                     {% endif %}
                 </div>
@@ -246,7 +246,7 @@
 
             <div id="detail_box__footer" class="row hidden-xs hidden-sm">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center btn_area">
-                    <p><a href="{{ url('admin_customer_page', { page_no : app.session.get('eccube.admin.customer.search.page_no')|default('1') } ) }}?resume=1">検索画面に戻る</a></p>
+                    <p><a href="{{ url('admin_customer_page', { page_no : app.session.get('eccube.admin.customer.search.page_no')|default('1') } ) }}?resume=1">返回检索页面</a></p>
                 </div>
             </div>
 
@@ -266,7 +266,7 @@
                         </div>
                         <div id="button_box__insert_button" class="row text-center">
                             <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
-                                <button class="btn btn-primary btn-block btn-lg" type="submit">会員情報を登録</button>
+                                <button class="btn btn-primary btn-block btn-lg" type="submit">登录会员信息</button>
                             </div>
                         </div>
                     </div><!-- /.box-body -->
@@ -274,7 +274,7 @@
 
                 <div id="shop_note_box" class="box">
                     <div id="shop_note_box__header" class="box-header">
-                        <h3 class="box-title">ショップ用メモ欄</h3>
+                        <h3 class="box-title">商店用备注栏</h3>
                     </div><!-- /.box-header -->
                     <div id="shop_note_box__note" class="box-body">
                         {{ form_widget(form.note) }}

@@ -24,8 +24,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['store', 'plugin', 'plugin_list'] %}
 
-{% block title %}オーナーズストア{% endblock %}
-{% block sub_title %}プラグイン一覧{% endblock %}
+{% block title %}业主商店{% endblock %}
+{% block sub_title %}插件列表{% endblock %}
 
 {% block javascript %}
 <script>
@@ -50,8 +50,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header">
-                    <a href="{{ url('admin_store_plugin_owners_install') }}" class="btn btn-info btn-xs pull-right">プラグインの新規追加はこちら</a>
-                    <h3 class="box-title">オーナーズストアプラグイン</h3>
+                    <a href="{{ url('admin_store_plugin_owners_install') }}" class="btn btn-info btn-xs pull-right">从这里添加新的插件</a>
+                    <h3 class="box-title">业主商店插件</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     {{ include('Store/plugin_table.twig', {'Plugins': officialPlugins}) }}
@@ -60,8 +60,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
             <div class="box">
                 <div class="box-header">
-                    <a href="{{ url('admin_store_plugin_install') }}" class="btn btn-info btn-xs pull-right">プラグインのアップロードはこちら</a>
-                    <h3 class="box-title">独自プラグイン</h3>
+                    <a href="{{ url('admin_store_plugin_install') }}" class="btn btn-info btn-xs pull-right">从这里上传新插件</a>
+                    <h3 class="box-title">独自插件</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     {{ include('Store/plugin_table.twig', {'Plugins': unofficialPlugins}) }}
@@ -70,7 +70,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             {% if unregisterdPlugins is not empty %}
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">未登録プラグイン</h3>
+                    <h3 class="box-title">未登录插件</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     {{ include('Store/unregisterd_plugin_table.twig', {'Plugins': unregisterdPlugins}) }}
@@ -86,7 +86,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><svg class="cb cb-close" aria-hidden="true"><use xlink:href="#cb-close"></svg></button>
-                <h4 class="modal-title" id="readmeModalLabel">{# プラグイン名 #}</h4>
+                <h4 class="modal-title" id="readmeModalLabel">{# 插件名 #}</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group" id="readmeContent">

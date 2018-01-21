@@ -24,8 +24,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['store', 'plugin', 'plugin_handler'] %}
 
-{% block title %}オーナーズストア{% endblock %}
-{% block sub_title %}高度な設定{% endblock %}
+{% block title %}业主商店{% endblock %}
+{% block sub_title %}高级设定{% endblock %}
 
 {% block main %}
 
@@ -45,9 +45,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>プラグイン名</th>
-                                                <th>ハンドラ名</th>
-                                                <th>優先度</th>
+                                                <th>插件名</th>
+                                                <th>手柄名</th>
+                                                <th>优先度</th>
                                                 <th>操作</th>
                                             </tr>
                                             </thead>
@@ -69,10 +69,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                                     <li>
                                                                         {% if loop.first == false %}
-                                                                            <a href="{{ url('admin_store_plugin_handler_up', {'handlerId': handler.id}) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">上へ</a>
+                                                                            <a href="{{ url('admin_store_plugin_handler_up', {'handlerId': handler.id}) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">往上</a>
                                                                         {% endif %}
                                                                         {% if loop.last == false %}
-                                                                            <a href="{{ url('admin_store_plugin_handler_down', {'handlerId': handler.id}) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">下へ</a>
+                                                                            <a href="{{ url('admin_store_plugin_handler_down', {'handlerId': handler.id}) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">往下</a>
                                                                         {% endif %}
                                                                     </li>
                                                                 </ul>
@@ -97,14 +97,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header with-arrow">
-                        プラグインハンドラー管理
+                        插件手柄管理
                     </div><!-- /.box-header -->
                     <div class="box-header with-arrow">
-                        <h3 class="box-title">検索条件に該当するデータがありませんでした。</h3>
+                        <h3 class="box-title">没有符合搜索条件的数据。</h3>
                     </div><!-- /.box-header -->
                 </div>
             </div>
         </div>
     {% endif %}
 {% endblock %}
-

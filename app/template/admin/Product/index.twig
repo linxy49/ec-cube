@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['product', 'product_master'] %}
 
 {% block title %}商品管理{% endblock %}
-{% block sub_title %}商品マスター{% endblock %}
+{% block sub_title %}商品表{% endblock %}
 
 {% form_theme searchForm 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -57,7 +57,7 @@ $(function() {
         });
     }
 
-    // フォーム値を確認し、アコーディオンを制御
+    // フォーム値を确认し、アコーディオンを制御
     // 値あり : 開く / 値なし : 閉じる
     (function($, f) {
         //フォームがないページは処理キャンセル
@@ -83,14 +83,14 @@ $(function() {
 {% endblock javascript %}
 
 {% block main %}
-            <!--検索条件設定テーブルここから-->
+            <!--搜索条件设定テーブルここから-->
             <div id="search_wrap" class="search-box">
                 <form name="search_form" id="search_form" method="post" action="{{ url('admin_product') }}">
                 	{{ form_widget(searchForm._token) }}
                     <div id="search_box" class="row">
                         <div class="col-md-12 accordion">
 
-                            {{ form_widget(searchForm.id, { attr: { placeholder: '商品名・ID・コード', class : 'input_search' } } ) }}
+                            {{ form_widget(searchForm.id, { attr: { placeholder: '商品名・ID・编号, class : 'input_search' } } ) }}
 
                             <a id="search_box__toggle" href="#" class="toggle{% if active %} active{% endif %}">
                                 <svg class="cb cb-minus"> <use xlink:href="#cb-minus"/></svg> <svg class="cb cb-minus"> <use xlink:href="#cb-minus"/></svg>
@@ -102,12 +102,12 @@ $(function() {
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div id="search_box__category_id" class="form-group">
-                                                    <label>カテゴリ</label>
+                                                    <label>分类</label>
                                                     {{ form_widget(searchForm.category_id) }}
                                                 </div>
                                             </div>
                                             <div id="search_box__status" class="col-md-6">
-                                                <label>種別</label>
+                                                <label>种别</label>
                                                 <div class="form-group">
                                                     {{ form_widget(searchForm.status) }}
                                                 </div>
@@ -116,7 +116,7 @@ $(function() {
 
                                         <div class="row">
                                             <div id="search_box__create_date" class="col-sm-6">
-                                                <label>登録日</label>
+                                                <label>登录日</label>
                                                 <div class="form-group range">
                                                     {{ form_widget(searchForm.create_date_start, {'attr': {'class': 'input_cal'}}) }} ～ {{ form_widget(searchForm.create_date_end, {'attr': {'class': 'input_cal'}}) }}
                                                 </div>
@@ -143,7 +143,7 @@ $(function() {
                                         </div><!-- /.row -->
                                         <div id="search_box_inner__footer" class="row">
                                             <div id="search_box__clear_button" class="col-sm-12">
-                                                <p class="text-center"><a href="#" class="search-clear">検索条件をクリア</a></p>
+                                                <p class="text-center"><a href="#" class="search-clear">清除搜索条件</a></p>
                                             </div>
                                         </div><!-- /.row -->
                                     </div>
@@ -155,14 +155,14 @@ $(function() {
                     <div id="search_box__footer" class="row btn_area">
                         <div id="search_box__search_button" class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 text-center">
                             <button type="submit" class="btn btn-primary btn-block btn-lg">
-                                検索する <svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right"></svg>
+                                搜索 <svg class="cb cb-angle-right"><use xlink:href="#cb-angle-right"></svg>
                             </button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
             </div>
-            <!--検索条件設定テーブルここまで-->
+            <!--搜索条件设定テーブルここまで-->
 
         {% if pagination %}
             <div id="result_list" class="row">
@@ -170,7 +170,7 @@ $(function() {
                     <div id="result_list_main" class="box">
                         {% if pagination|length > 0 %}
                         <div id="result_list__header" class="box-header with-arrow">
-                            <h3 class="box-title">検索結果 <span class="normal"><strong>{{ pagination.totalItemCount }} 件</strong> が該当しました</span></h3>
+                            <h3 class="box-title">搜索結果 <span class="normal"><strong>共有{{ pagination.totalItemCount }} 件</strong></span></h3>
                         </div><!-- /.box-header -->
                         <div id="result_list__body" class="box-body no-padding">
                             <div id="result_list__menu" class="row">
@@ -178,9 +178,9 @@ $(function() {
                                     <ul id="result_list__status_menu" class="link-with-bar">
                                     <li>
                                         {% if page_status is null %}
-                                        <a>すべて</a>
+                                        <a>全部</a>
                                         {% else %}
-                                        <a href="{{ path('admin_product_page', {'page_no': 1} ) }}">すべて</a>
+                                        <a href="{{ path('admin_product_page', {'page_no': 1} ) }}">全部</a>
                                         {% endif %}
                                     </li>
                                     {% for disp in disps %}
@@ -214,10 +214,10 @@ $(function() {
                                             </ul>
                                     </li>
                                     <li id="result_list__csv_menu" class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown">CSVダウンロード<svg class="cb cb-angle-down icon_down"><use xlink:href="#cb-angle-down"></svg></a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown">CSV下载<svg class="cb cb-angle-down icon_down"><use xlink:href="#cb-angle-down"></svg></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ url('admin_product_export') }}">CSVダウンロード</a></li>
-                                            <li><a href="{{ url('admin_setting_shop_csv', { id : constant('\\Eccube\\Entity\\Master\\CsvType::CSV_TYPE_PRODUCT') }) }}">出力項目設定</a></li>
+                                            <li><a href="{{ url('admin_product_export') }}">CSV下载</a></li>
+                                            <li><a href="{{ url('admin_setting_shop_csv', { id : constant('\\Eccube\\Entity\\Master\\CsvType::CSV_TYPE_PRODUCT') }) }}">设定显示项目</a></li>
                                         </ul>
                                     </li>
                                     </ul>
@@ -250,10 +250,10 @@ $(function() {
                                                 <div id="result_list__item_menu_toggle--{{ Product.id }}" class="dropdown">
                                                     <a class="dropdown-toggle" data-toggle="dropdown"><svg class="cb cb-ellipsis-h"><use xlink:href="#cb-ellipsis-h"></svg></a>
                                                     <ul id="result_list__item_menu--{{ Product.id }}" class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="{{ url('admin_product_product_class', { id : Product.id }) }}">規格</a></li>
-                                                    <li><a href="{{ url('admin_product_product_display', {'id' : Product.id}) }}" target="_blank">確認</a></li>
-                                                    <li><a href="{{ url('admin_product_product_copy', {'id' : Product.id}) }}" {{ csrf_token_for_anchor() }} data-method="post" data-message="商品情報を複製してもよろしいですか？">複製</a></li>
-                                                    <li><a href="{{ url('admin_product_product_delete', {'id' : Product.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="商品情報を削除してもよろしいですか？">削除</a></li>
+                                                    <li><a href="{{ url('admin_product_product_class', { id : Product.id }) }}">规格</a></li>
+                                                    <li><a href="{{ url('admin_product_product_display', {'id' : Product.id}) }}" target="_blank">确认</a></li>
+                                                    <li><a href="{{ url('admin_product_product_copy', {'id' : Product.id}) }}" {{ csrf_token_for_anchor() }} data-method="post" data-message="是否复制商品信息？">複製</a></li>
+                                                    <li><a href="{{ url('admin_product_product_delete', {'id' : Product.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="是否删除商品信息？">删除</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -267,7 +267,7 @@ $(function() {
                         {% endif %}
                         {% else %}
                         <div id="result_list__header" class="box-header with-arrow">
-                            <h3 class="box-title">検索条件に該当するデータがありませんでした。</h3>
+                            <h3 class="box-title">没有符合搜索条件的数据。</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body no-padding">
                             <div class="row">
@@ -275,9 +275,9 @@ $(function() {
                                     <ul class="link-with-bar">
                                         <li>
                                             {% if page_status is null %}
-                                                <a>すべて</a>
+                                                <a>全部</a>
                                             {% else %}
-                                                <a href="{{ path('admin_product_page', {'page_no': page_no} ) }}">すべて</a>
+                                                <a href="{{ path('admin_product_page', {'page_no': page_no} ) }}">全部</a>
                                             {% endif %}
                                         </li>
                                         {% for disp in disps %}

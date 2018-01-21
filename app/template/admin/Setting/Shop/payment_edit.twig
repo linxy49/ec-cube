@@ -23,8 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['setting', 'shop', 'shop_payment'] %}
 
-{% block title %}ショップ設定{% endblock %}
-{% block sub_title %}支払方法管理{% endblock %}
+{% block title %}店铺设定{% endblock %}
+{% block sub_title %}支付方法管理{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -95,7 +95,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             hideSvg();
         },
         fail: function (e, data) {
-            alert('アップロードに失敗しました。');
+            alert('上传に失敗しました。');
         },
         always: function (e, data) {
             $('#progress').hide();
@@ -118,7 +118,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         },
         processalways: function (e, data) {
             if (data.files.error) {
-                alert("画像ファイルサイズが大きいか画像ファイルではありません。");
+                alert("图片文件尺寸过大或者是非图片文件。");
             }
         }
     });
@@ -129,7 +129,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         hideSvg();
     });
 
-    // 画像アップロード
+    // 图片上传
     $('#file_upload').on('click', function () {
         $('#{{ form.payment_image_file.vars.id }}').click();
     });
@@ -145,7 +145,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             <div id="detail_wrap" class="col-md-9">
                 <div id="detail_box" class="box">
                     <div id="detail_box__header" class="box-header">
-                        <h3 class="box-title">支払方法登録・編集</h3>
+                        <h3 class="box-title">支付方法登录・编辑</h3>
                     </div><!-- /.box-header -->
                     <div id="detail_box__body" class="box-body">
 
@@ -168,7 +168,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                             <label class="col-sm-2 control-label" for="admin_product_product_image">
                                 {{ form.payment_image_file.vars.label }}
                                 <br>
-                                <span class="small">620px以上推奨</span>
+                                <span class="small">推荐620px以上</span>
                             </label>
                             <div id="detail_box__files" class="col-sm-9 col-lg-10">
                                 <div class="photo_files" id="drag-drop-area">
@@ -186,7 +186,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                 {{ form_widget(form.payment_image, { attr : { style : 'display:none;' } }) }}
                                 {{ form_widget(form.payment_image_file, { attr : { accept : 'image/*', style : 'display:none;' } }) }}
                                 <a id="file_upload" class="with-icon">
-                                    <svg class="cb cb-plus"> <use xlink:href="#cb-plus" /></svg>ファイルをアップロード
+                                    <svg class="cb cb-plus"> <use xlink:href="#cb-plus" /></svg>文件上传
                                 </a>
                                 {{ form_errors(form.payment_image_file) }}
                             </div>
@@ -202,25 +202,25 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                 </div><!-- /.box -->
                 <div id="detail_list__back_button" class="row">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center btn_area">
-                        <p><a href="{{ url('admin_setting_shop_payment') }}">一覧に戻る</a></p>
+                        <p><a href="{{ url('admin_setting_shop_payment') }}">返回列表</a></p>
                     </div>
                 </div>
 
             </div><!-- /.col -->
-            
+
             <div id="detail_list_footer" class="col-md-3">
                 <div class="col_inner" id="aside_column">
                     <div id="detail_list_footer__body" class="box no-header">
                         <div id="detail_list_footer__body_inner" class="box-body">
                             <div id="detail_list_footer__insert_button" class="row text-center">
                                 <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
-                                    <button class="btn btn-primary btn-block btn-lg" type="submit">登録</button>
+                                    <button class="btn btn-primary btn-block btn-lg" type="submit">登录</button>
                                 </div>
                             </div>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div>
-            </div><!-- /.col --> 
+            </div><!-- /.col -->
 
         </div>
     </form>

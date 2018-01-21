@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['product', 'class_name'] %}
 
 {% block title %}商品管理{% endblock %}
-{% block sub_title %}規格編集{% endblock %}
+{% block sub_title %}规格编辑{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -36,7 +36,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     <script>
         $(function() {
             var oldRanks = [];
-            // 画面の中のrank一覧を保持
+            // 画面の中のrank列表を保持
             $("div.tableish > .item_box").each(function() {
                 oldRanks.push(this.dataset.rank);
             });
@@ -86,8 +86,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                         <div id="edit_box__body" class="form-group">
                             <div class="col-md-12 form-inline">
                                 {{ form_widget(form._token) }}
-                                {{ form_widget(form.name, {attr: {placeholder: '規格名を入力'}}) }}
-                                <button class="btn btn-default btn-sm" type="submit">規格作成</button>
+                                {{ form_widget(form.name, {attr: {placeholder: '输入规格名'}}) }}
+                                <button class="btn btn-default btn-sm" type="submit">规格作成</button>
                                 {{ form_errors(form.name) }}
                             </div>
                         </div>
@@ -124,20 +124,20 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                                 <ul id="sortable_list_box__menu--{{ ClassName.id }}" class="dropdown-menu dropdown-menu-right">
                                                     <li>
                                                         <a href="{{ url('admin_product_class_category', {class_name_id : ClassName.id }) }}">
-                                                            分類登録
+                                                            分类登录
                                                         </a>
                                                     </li>
 
                                                     {% if ClassName.id != TargetClassName.id %}
-                                                        <li><a href="{{ url('admin_product_class_name_edit', {id: ClassName.id}) }}">編集</a></li>
+                                                        <li><a href="{{ url('admin_product_class_name_edit', {id: ClassName.id}) }}">编辑</a></li>
                                                     {% else %}
-                                                        <li><a>編集中</a></li>
+                                                        <li><a>编辑中</a></li>
                                                     {% endif %}
 
                                                     {% if ClassName.ClassCategories|length == 0 %}
                                                         <li>
                                                             <a href="{{ url('admin_product_class_name_delete', {id: ClassName.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete">
-                                                                削除
+                                                                删除
                                                             </a>
                                                         </li>
                                                     {% endif %}
@@ -153,7 +153,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                     </div><!-- /.box-body -->
                 {% else %}
                     <div id="sortable_list_box" class="box-body no-padding">
-                        <div id="sortable_list_box__not_find_message" class="data-empty"><svg class="cb cb-inbox"> <use xlink:href="#cb-inbox" /></svg><p>データはありません</p></div>
+                        <div id="sortable_list_box__not_find_message" class="data-empty"><svg class="cb cb-inbox"> <use xlink:href="#cb-inbox" /></svg><p>没有数据ん</p></div>
                     </div><!-- /.box-body -->
                 {% endif %}
                 <!-- ▲ データがある時 ▲ -->

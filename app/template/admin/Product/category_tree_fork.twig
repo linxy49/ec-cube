@@ -22,18 +22,18 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 <ul{% if treeId is defined %} id="{{ treeId }}"{% endif %}{%if disp_child is not defined or disp_child == false %} style="display: none;"{% endif %}>
     {% for Child in Children %}
         <li class="level{{ Child.level }}">
-            {# カテゴリ名表示 #}
+            {# 分类名表示 #}
             {% if Child.level < app.config.level_max %}
                 <a href="{{ url('admin_product_category_show', {parent_id: Child.id}) }}">
                     {% if Parent and Parent.id == Child.id %}
-                        <img src="{{ app.config.admin_tpl }}img/contents/folder_open.gif" alt="フォルダ" />
+                        <img src="{{ app.config.admin_tpl }}img/contents/folder_open.gif" alt="文件夹" />
                     {% else %}
-                        <img src="{{ app.config.admin_tpl }}img/contents/folder_close.gif" alt="フォルダ" />
+                        <img src="{{ app.config.admin_tpl }}img/contents/folder_close.gif" alt="文件夹" />
                     {% endif %}
                     {{ Child.id }}.{{ Child.name[:10] }}
                 </a>
             {% else %}
-                <img src="{{ app.config.admin_tpl }}img/contents/folder_close.gif" alt="フォルダ" />
+                <img src="{{ app.config.admin_tpl }}img/contents/folder_close.gif" alt="文件夹" />
                 {{ Child.id }}.{{ Child.name[:10] }}
             {% endif %}
             {% if Child in Path %}

@@ -5,7 +5,7 @@
             data: { 'id' : this.dataset.customer },
             url: '{{ url('admin_order_search_customer_by_id') }}',
             success: function(data) {
-                // 顧客情報をフォームにセットする.
+                // 顧客信息をフォームにセットする.
                 $('#order_CustomerId').html(data['id']);
                 $('#order_Customer').val(data['id']);
                 $('#order_name_name01').val(data['name01']);
@@ -34,7 +34,7 @@
         });
     });
 
-    // 会員検索
+    // 会员搜索
     $('#customer_pagination a').on('click', function(event) {
         if (!$(this).parent().is('.active')) {
             var list = $('#searchCustomerModalList');
@@ -59,10 +59,10 @@
     <table class="table">
         <thead >
             <tr id="search_customer_modal_box__body_inner_header">
-                <th>会員ID</th>
-                <th>お名前(カナ)</th>
-                <th>電話番号</th>
-                <th>メールアドレス</th>
+                <th>会员ID</th>
+                <th>姓名(片假名)</th>
+                <th>电话号码</th>
+                <th>邮箱</th>
                 <th>決定</th>
             </tr>
         </thead>

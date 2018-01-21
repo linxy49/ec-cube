@@ -19,11 +19,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <table class="table table-hover table-condensed">
             <thead>
             <tr>
-                <th>プラグイン</th>
-                <th>バージョン</th>
-                <th>コード</th>
-                <th>アップデート</th>
-                <th>設定</th>
+                <th>插件</th>
+                <th>版本</th>
+                <th>号码</th>
+                <th>升级</th>
+                <th>设定</th>
             </tr>
             </thead>
             <tbody>
@@ -47,7 +47,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                         {% if Plugin.code is defined %}
                             <td class="tc"><p>{{ Plugin.code }}</p>
                                 {% if attribute(app.config[Plugin.code].const, 'readme') is defined %}
-                                    <a href="#" class="view_readme" data-toggle="modal" data-target="#readmeModal" data-name="{{ Plugin.name }}" data-readme="{{ attribute(app.config[Plugin.code].const, 'readme')  }}">詳細を表示</a>
+                                    <a href="#" class="view_readme" data-toggle="modal" data-target="#readmeModal" data-name="{{ Plugin.name }}" data-readme="{{ attribute(app.config[Plugin.code].const, 'readme')  }}">显示详细</a>
                                 {% endif %}
                             </td>
                         {% else %}
@@ -58,7 +58,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                         </td>
                         <td class="ta text-center">
                             {% if unregisterdPluginsConfigPages[Plugin.code] is defined %}
-                                <a href='{{ unregisterdPluginsConfigPages[Plugin.code]}}'>設定</a>
+                                <a href='{{ unregisterdPluginsConfigPages[Plugin.code]}}'>设定</a>
                             {% else %}
                                 &nbsp;-&nbsp;
                             {% endif %}

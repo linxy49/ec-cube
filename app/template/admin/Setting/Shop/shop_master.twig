@@ -25,8 +25,8 @@
 
 {% set menus = ['setting', 'shop', 'shop_index'] %}
 
-{% block title %}基本情報設定{% endblock %}
-{% block sub_title %}SHOPマスター{% endblock %}
+{% block title %}基本信息设定{% endblock %}
+{% block sub_title %}SHOP表{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -45,7 +45,7 @@
             <div id="detail_wrap" class="col-md-9">
                 <div id="detail_box" class="box">
                     <div id="detail_box__header" class="box-header">
-                        <h3 class="box-title">基本情報編集</h3>
+                        <h3 class="box-title">基本信息编辑</h3>
                     </div><!-- /.box-header -->
                     <div id="detail_box__body" class="box-body">
 
@@ -81,11 +81,11 @@
                         {# 住所：住所2 #}
                         <div id="detail_box__addr02" class="form-group {% if form.address.addr02.vars.errors is not empty  %}has-error{% endif %}">
                             <div class="col-sm-offset-2 col-sm-9 col-lg-10">
-                                {{ form_widget(form.address.addr02, { attr : { placeholder : '番地・ビル名（例：1-3-5）' }}) }}
+                                {{ form_widget(form.address.addr02, { attr : { placeholder : '番地・楼名（例：1-3-5）' }}) }}
                                 {{ form_errors(form.address.addr02) }}
                             </div>
                         </div>
-                        {# 電話番号 #}
+                        {# 电话号码 #}
                         <div id="detail_box__tel" class="form-group">
                             {{ form_label(form.tel) }}
                             <div class="col-sm-9 col-lg-10 input_tel form-inline {% if form.tel.tel01.vars.errors is not empty or form.tel.tel02.vars.errors is not empty or form.tel.tel03.vars.errors is not empty %}has-error{% endif %}">
@@ -127,7 +127,7 @@
 
                 <div id="delivery_fee_box" class="box">
                     <div id="delivery_fee_box__header" class="box-header">
-                        <h3 class="box-title">送料設定</h3>
+                        <h3 class="box-title">运费设定</h3>
                     </div><!-- /.box-header -->
                     <div id="delivery_fee_box__body" class="box-body">
 
@@ -141,7 +141,7 @@
 
                 <div id="customer_box" class="box">
                     <div id="customer_box__header" class="box-header">
-                        <h3 class="box-title">会員設定</h3>
+                        <h3 class="box-title">会员设定</h3>
                     </div><!-- /.box-header -->
                     <div id="customer_box__body" class="box-body">
 
@@ -155,7 +155,7 @@
 
                 <div id="product_box" class="box">
                     <div id="product_box__header" class="box-header">
-                        <h3 class="box-title">商品設定</h3>
+                        <h3 class="box-title">商品设定</h3>
                     </div><!-- /.box-header -->
                     <div id="product_box__body" class="box-body">
 
@@ -166,7 +166,7 @@
 
                 <div id="map_box" class="box">
                     <div id="map_box__header" class="box-header">
-                        <h3 class="box-title">地図設定</h3>
+                        <h3 class="box-title">地图设定</h3>
                     </div><!-- /.box-header -->
                     <div id="map_box__body" class="box-body">
 
@@ -183,7 +183,7 @@
                         <div id="common_button_box__body" class="box-body">
                             <div id="common_button_box__insert_button_area" class="row text-center">
                                 <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
-                                    <button class="btn btn-primary btn-block btn-lg" type="submit">登録</button>
+                                    <button class="btn btn-primary btn-block btn-lg" type="submit">登录</button>
                                 </div>
                             </div>
                         </div><!-- /.box-body -->

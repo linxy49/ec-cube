@@ -25,11 +25,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             <table class="table table-hover table-condensed">
                 <thead>
                 <tr>
-                    <th>プラグイン</th>
-                    <th>バージョン</th>
-                    <th>コード</th>
-                    <th>アップデート</th>
-                    <th>設定</th>
+                    <th>插件</th>
+                    <th>版本</th>
+                    <th>号码</th>
+                    <th>升级</th>
+                    <th>设定</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -41,22 +41,22 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                 <strong>{{ Plugin.name }}</strong>{% if Plugin.enable == 0 %}<span class="text-danger"> (停止中)</span>{% endif %}<br>
                                 {% if Plugin.enable == 1 %}
                                     <a href="{{ url('admin_store_plugin_disable', { id : Plugin.id }) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">
-                                        無効にする
+                                        设成无效
                                     </a>
                                 {% else %}
                                     <a href="{{ url('admin_store_plugin_enable', { id : Plugin.id }) }}" {{ csrf_token_for_anchor() }} data-method="put" data-confirm="false">
-                                        有効にする
+                                        设成有效
                                     </a>
                                 {% endif %}
                                 /
-                                <a href="{{ url('admin_store_plugin_uninstall', { id : Plugin.id }) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="このプラグインを削除してもよろしいですか？">
-                                    削除
+                                <a href="{{ url('admin_store_plugin_uninstall', { id : Plugin.id }) }}" {{ csrf_token_for_anchor() }} data-method="delete" data-message="是否删除该插件？">
+                                    删除
                                 </a>
                             </td>
                             <td class="tv text-center">{{ Plugin.version }}</td>
                             <td class="tc"><p>{{ Plugin.code }}</p>
                                 {% if attribute(app.config[Plugin.code].const, 'readme') is defined %}
-                                    <a href="#" class="view_readme" data-toggle="modal" data-target="#readmeModal" data-name="{{ Plugin.name }}" data-readme="{{ attribute(app.config[Plugin.code].const, 'readme')  }}">詳細を表示</a>
+                                    <a href="#" class="view_readme" data-toggle="modal" data-target="#readmeModal" data-name="{{ Plugin.name }}" data-readme="{{ attribute(app.config[Plugin.code].const, 'readme')  }}">显示详细</a>
                                 {% endif %}
                             </td>
                             <td class="tu">
@@ -67,27 +67,27 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                 {{ form_errors(form.plugin_archive) }}
                                 <p></p>
                                 <a class="btn btn-primary btn-xs" href="#" onclick="changeActionSubmit('{{ url('admin_store_plugin_update', { id : Plugin.id }) }}', '{{ form.vars.name }}');">
-                                    アップロード
+                                    上传
                                 </a>
                             {% else %}
                                 {% if Plugin.updateStatus == 3 %}
-                                    <p>新バージョンのプラグインが利用可能です。
-                                        <a class="btn btn-default btn-xs" href="{{ url('admin_store_plugin_upgrade', {'action': 'update', 'id': Plugin.source, 'version': Plugin.version}) }}">今すぐ更新</a>
+                                    <p>可以使用新版本的插件。
+                                        <a class="btn btn-default btn-xs" href="{{ url('admin_store_plugin_upgrade', {'action': 'update', 'id': Plugin.source, 'version': Plugin.version}) }}">现在马上更新</a>
                                     </p>
                                     <ul class="plugin-meta dl-horizontal">
-                                        <li class="plugin-version">プラグインバージョン : {{ Plugin.newVersion }}</li>
-                                        <li class="plugin-version">EC-CUBE対応バージョン : {{ Plugin.eccubeVersionAsString }}</li>
+                                        <li class="plugin-version">插件版本 : {{ Plugin.newVersion }}</li>
+                                        <li class="plugin-version">EC-CUBE对应版本 : {{ Plugin.eccubeVersionAsString }}</li>
                                         <li class="plugin-update">更新日 : {{ Plugin.lastUpdateDate|time_ago }}</li>
                                     </ul>
                                 {% else %}
-                                    <p>アップデート対象プラグインはありません。</p>
+                                    <p>没有可升级的插件。</p>
                                 {% endif %}
-                                <p><a href="{{ Plugin.productUrl }}" target="_blank">詳細情報</a></p>
+                                <p><a href="{{ Plugin.productUrl }}" target="_blank">詳細信息</a></p>
                             {% endif %}
                             </td>
                             <td class="ta text-center">
                                 {% if configPages[Plugin.code] is defined %}
-                                   <a href='{{configPages[Plugin.code]}}'>設定</a>
+                                   <a href='{{configPages[Plugin.code]}}'>设定</a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -99,6 +99,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     </div>
 {% else %}
     <div class="text-danger">
-        インストールされているプラグインはありません。
+        没有已安装的插件。
     </div>
 {% endif %}

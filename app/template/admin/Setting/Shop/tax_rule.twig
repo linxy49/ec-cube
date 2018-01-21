@@ -23,8 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['setting', 'shop', 'shop_tax'] %}
 
-{% block title %}基本情報設定{% endblock %}
-{% block sub_title %}税率設定{% endblock %}
+{% block title %}基本信息设定{% endblock %}
+{% block sub_title %}税率设定{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -66,10 +66,10 @@ $(function() {
         {{ form_widget(form._token) }}
     <div id="tax_rule_wrap" class="row">
         <div id="tax_rule_box" class="col-md-12">
-            {# 個別税率設定 #}
+            {# 个别税率设定 #}
             <div id="tax_rule_box__body" class="box">
                 <div id="tax_rule_box__header" class="box-header">
-                    <h3 class="box-title">個別税率設定</h3>
+                    <h3 class="box-title">个别税率设定</h3>
                 </div><!-- /.box-header -->
                 <div id="tax_rule_box__body_inner" class="box-body">
                     {{ form_row(form.option_product_tax_rule) }}
@@ -78,15 +78,15 @@ $(function() {
             <div id="tax_rule_box__insert_button" class="row btn_area2">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center">
                     <button class="btn btn-primary btn-block btn-lg"
-                            onclick="fnChange('{{ url('admin_setting_shop_tax_edit_param') }}'); return false;">登録</button>
+                            onclick="fnChange('{{ url('admin_setting_shop_tax_edit_param') }}'); return false;">登录</button>
 
                 </div>
             </div>
 
-            {# 共通税率設定 #}
+            {# 共通税率设定 #}
             <div id="tax_common_rule_box" class="box">
                 <div id="tax_common_rule_box__header" class="box-header">
-                    <h3 class="box-title">共通税率設定</h3>
+                    <h3 class="box-title">共通税率设定</h3>
                 </div><!-- /.box-header -->
                 <div id="tax_common_rule_box__body" class="box-body">
                     {{ form_row(form.tax_rate) }}
@@ -105,14 +105,14 @@ $(function() {
             </div><!-- /.box -->
             <div id="tax_common_rule_box__insert_button" class="row btn_area2">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center">
-                    <button class="btn btn-primary btn-block btn-lg" type="submit">登録</button>
+                    <button class="btn btn-primary btn-block btn-lg" type="submit">登录</button>
                 </div>
             </div>
 
-            {# 税率一覧 #}
+            {# 税率列表 #}
             <div id="tax_rule_list" class="box">
                 <div id="tax_rule_list__header" class="box-header">
-                    <h3 class="box-title">税率一覧</h3>
+                    <h3 class="box-title">税率列表</h3>
                 </div><!-- /.box-header -->
                 <div id="tax_rule_list__body" class="box-body">
                     <div id="tax_rule_list__list" class="table-responsive">
@@ -121,8 +121,8 @@ $(function() {
                             <tr id="tax_rule_list__header">
                                 <th id="tax_rule_list__header_id">ID</th>
                                 <th id="tax_rule_list__header_tax_rate">消費税率</th>
-                                <th id="tax_rule_list__header_calc_rule">課税規則</th>
-                                <th id="tax_rule_list__header_default_tax_rule">適用日時</th>
+                                <th id="tax_rule_list__header_calc_rule">课税规则</th>
+                                <th id="tax_rule_list__header_default_tax_rule">适用日时</th>
                                 <th id="tax_rule_list__header_menu_box">&nbsp;</th>
                             </tr>
                             </thead>
@@ -132,16 +132,16 @@ $(function() {
                                 <td id="tax_rule_list__id--{{ TaxRule.id }}">{{ TaxRule.id }}</td>
                                 <td id="tax_rule_list__tax_rate--{{ TaxRule.id }}">{{ TaxRule.tax_rate }}%</td>
                                 <td id="tax_rule_list__calc_rule--{{ TaxRule.id }}">{{ TaxRule.calc_rule }}</td>
-                                <td id="tax_rule_list__default_tax_rule--{{ TaxRule.id }}">{{ TaxRule.default_tax_rule  ? '基本税率設定' : TaxRule.apply_date|date('Y/m/d  H:i') }}</td>
+                                <td id="tax_rule_list__default_tax_rule--{{ TaxRule.id }}">{{ TaxRule.default_tax_rule  ? '基本税率设定' : TaxRule.apply_date|date('Y/m/d  H:i') }}</td>
                                 <td id="tax_rule_list__menu_box--{{ TaxRule.id }}" class="icon_edit">
                                     <div id="tax_rule_list__menu_box_toggle" class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><svg class="cb cb-ellipsis-h"> <use xlink:href="#cb-ellipsis-h" /></svg></a>
                                         <ul id="tax_rule_list__menu--{{ TaxRule.id }}" class="dropdown-menu dropdown-menu-right">
-                                            <li><a href="{{ url('admin_setting_shop_tax_edit', { id : TaxRule.id }) }}">編集</a></li>
+                                            <li><a href="{{ url('admin_setting_shop_tax_edit', { id : TaxRule.id }) }}">编辑</a></li>
                                             {% if TaxRule.default_tax_rule %}
-                                                <li><a>削除</a></li>
+                                                <li><a>删除</a></li>
                                             {% else %}
-                                                <li><a href="{{ url('admin_setting_shop_tax_delete', { id : TaxRule.id }) }}" {{ csrf_token_for_anchor() }} data-method="delete">削除</a></li>
+                                                <li><a href="{{ url('admin_setting_shop_tax_delete', { id : TaxRule.id }) }}" {{ csrf_token_for_anchor() }} data-method="delete">删除</a></li>
                                             {% endif %}
                                         </ul>
                                     </div>

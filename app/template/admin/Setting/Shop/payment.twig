@@ -23,8 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['setting', 'shop', 'shop_payment'] %}
 
-{% block title %}ショップ設定{% endblock %}
-{% block sub_title %}支払方法管理{% endblock %}
+{% block title %}店铺设定{% endblock %}
+{% block sub_title %}支付方法管理{% endblock %}
 
 {% block main %}
     <div id="payment_wrap" class="row">
@@ -32,7 +32,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             <div id="payment_list_box__body" class="box">
                 <div id="payment_list_box__header" class="box-header with-arrow">
                     <h3 class="box-title">
-                        支払方法
+                        支付方法
                     </h3>
                 </div><!-- /.box-header -->
                 <div id="payment_list_box__body_inner" class="box-body">
@@ -41,8 +41,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                             <table class="table table-striped">
                                 <thead>
                                 <tr id="payment_list__list_header">
-                                    <th id="payment_list__header_method">支払方法</th>
-                                    <th id="payment_list__header_charge">手数料</th>
+                                    <th id="payment_list__header_method">支付方法</th>
+                                    <th id="payment_list__header_charge">手续费</th>
                                     <th id="payment_list__header_rule">利用条件</th>
                                     <th id="payment_list__header_menu_box">&nbsp;</th>
                                 </tr>
@@ -67,7 +67,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                             {% if Payment.rule_max > 0 %}
                                                 ～{{ Payment.rule_max }}円
                                             {% elseif Payment.rule_max is null %}
-                                                ～無制限
+                                                ～无限制
                                             {% endif %}
                                         </td>
                                         <td id="payment_list__menu_box--{{ Payment.id }}" class="icon_edit">
@@ -76,16 +76,16 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                                 <ul id="payment_list__menu--{{ Payment.id }}" class="dropdown-menu dropdown-menu-right">
                                                     <li>
                                                         {% if Payment.fix_flg == 1 %}
-                                                            <a href="{{ url('admin_setting_shop_payment_edit', { id: Payment.id}) }}">編集</a>
+                                                            <a href="{{ url('admin_setting_shop_payment_edit', { id: Payment.id}) }}">编辑</a>
                                                         {% else %}
-                                                            <a>編集</a>
+                                                            <a>编辑</a>
                                                         {% endif %}
                                                     </li>
                                                     <li>
                                                         {% if Payment.fix_flg == 1 %}
-                                                            <a href="{{ url('admin_setting_shop_payment_delete', { id: Payment.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete">削除</a>
+                                                            <a href="{{ url('admin_setting_shop_payment_delete', { id: Payment.id}) }}" {{ csrf_token_for_anchor() }} data-method="delete">删除</a>
                                                         {% else %}
-                                                            <a>削除</a>
+                                                            <a>删除</a>
                                                         {% endif %}
                                                     </li>
                                                     <li>
@@ -113,7 +113,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
     <div id="payment_list__footer" class="row">
         <div id="payment_list__insert_button" class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 text-center btn_area">
-            <a href="{{ url('admin_setting_shop_payment_new') }}" class="btn btn-primary btn-block btn-lg">支払方法を新規入力</a>
+            <a href="{{ url('admin_setting_shop_payment_new') }}" class="btn btn-primary btn-block btn-lg">输入新的支付方法</a>
         </div>
     </div>
 {% endblock %}

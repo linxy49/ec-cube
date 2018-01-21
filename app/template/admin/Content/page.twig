@@ -43,7 +43,7 @@
                         <div class="tableish">
                             <div class="item_box tr" style="background-color: #F9F9F9;">
                                 <div class="item_pattern td"><strong>页名</strong></div>
-                                <div class="item_pattern td"><strong>ルーティング名</strong></div>
+                                <div class="item_pattern td"><strong>路径名</strong></div>
                                 <div class="item_pattern td"><strong>文件名</strong></div>
                                 <div class="item_pattern td"></div>
                             </div>
@@ -63,7 +63,7 @@
                                             <a class="dropdown-toggle" data-toggle="dropdown"><svg class="cb cb-ellipsis-h"> <use xlink:href="#cb-ellipsis-h" /></svg></a>
                                             <ul id="sortable_list_box__menu--{{ PageLayout.id }}" class="dropdown-menu dropdown-menu-right">
                                                 <li>
-                                                    <a href="{{ url('admin_content_layout_edit', { id : PageLayout.id } ) }}" >布局编辑</a>
+                                                    <a href="{{ url('admin_content_layout_edit', { id : PageLayout.id } ) }}" >编辑布局</a>
                                                 </li>
                                                 <li>
                                                     {% if PageLayout.filename|length >= 1 %}

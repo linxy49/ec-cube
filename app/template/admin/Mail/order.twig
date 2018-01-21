@@ -24,84 +24,84 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {{ header }}
 
 ************************************************
-　ご請求金額
+　请求金额
 ************************************************
 
-ご注文番号：{{ Order.id }}
-お支払い合計：{{ Order.payment_total|price}}
-お支払い方法：{{ Order.payment_method }}
-メッセージ：{{ Order.message }}
+订单编号：{{ Order.id }}
+支付金额：{{ Order.payment_total|price}}
+支付方法：{{ Order.payment_method }}
+消息：{{ Order.message }}
 
 
 ************************************************
-　ご注文商品明細
+　购入商品详细
 ************************************************
 
 {% for OrderDetail in Order.OrderDetails %}
-商品コード: {{ OrderDetail.product_code }}
-商品名: {{ OrderDetail.product_name }}  {{ OrderDetail.classcategory_name1 }}  {{ OrderDetail.classcategory_name2 }}
-単価： {{ calc_inc_tax(OrderDetail.price, OrderDetail.tax_rate, OrderDetail.tax_rule)|price }}
+商品编号: {{ OrderDetail.product_code }}
+商品名称: {{ OrderDetail.product_name }}  {{ OrderDetail.classcategory_name1 }}  {{ OrderDetail.classcategory_name2 }}
+单价： {{ calc_inc_tax(OrderDetail.price, OrderDetail.tax_rate, OrderDetail.tax_rule)|price }}
 数量： {{ OrderDetail.quantity|number_format }}
 
 {% endfor %}
 
 -------------------------------------------------
-小　計 {{ Order.subtotal|price }}{% if Order.tax > 0 %}(うち消費税 {{ Order.tax|price }}){% endif %}
+小　计 {{ Order.subtotal|price }}{% if Order.tax > 0 %}(其中含消费税 {{ Order.tax|price }}){% endif %}
 
-手数料 {{ Order.charge|price }}
-送　料 {{ Order.delivery_fee_total|price}}
+手续费 {{ Order.charge|price }}
+邮　费 {{ Order.delivery_fee_total|price}}
 {% if Order.discount > 0 %}
-値引き {{ (0 - Order.discount)|price}}
+折扣 {{ (0 - Order.discount)|price}}
 {% endif %}
 ============================================
-合　計 {{ Order.payment_total|price }}
+合　计 {{ Order.payment_total|price }}
 
 ************************************************
-　ご注文者情報
+　买家信息
 ************************************************
-お名前　：{{ Order.name01 }} {{ Order.name02 }} 様
-フリガナ：{{ Order.kana01 }} {{ Order.kana02 }} 様
+姓名　：{{ Order.name01 }} {{ Order.name02 }} 様
+片假名：{{ Order.kana01 }} {{ Order.kana02 }} 様
 {% if Order.company_name %}
-会社名　：{{ Order.company_name }}
+公司名　：{{ Order.company_name }}
 {% endif %}
 {% if app.config.form_country_enable %}
 国　　　：{{ Order.Country.name }}
 ZIPCODE ：{{ Order.zip_code }}
 {% endif %}
-郵便番号：〒{{ Order.zip01 }}-{{ Order.zip02 }}
-住所　　：{{ Order.Pref.name }}{{ Order.addr01 }}{{ Order.addr02 }}
-電話番号：{{ Order.tel01 }}-{{ Order.tel02 }}-{{ Order.tel03 }}
-FAX番号 ：{{ Order.fax01 }}-{{ Order.fax02 }}-{{ Order.fax03 }}
+邮编　　：〒{{ Order.zip01 }}-{{ Order.zip02 }}
+地址　　：{{ Order.Pref.name }}{{ Order.addr01 }}{{ Order.addr02 }}
+电话号码：{{ Order.tel01 }}-{{ Order.tel02 }}-{{ Order.tel03 }}
+FAX号码 ：{{ Order.fax01 }}-{{ Order.fax02 }}-{{ Order.fax03 }}
 
-メールアドレス：{{ Order.email }}
+邮箱：{{ Order.email }}
 
 ************************************************
-　配送情報
+　配送信息
 ************************************************
 
 {%  for Shipping in Order.Shippings %}
-◎お届け先{% if Order.multiple %}{{ loop.index }}{% endif %}
+◎配送地址{% if Order.multiple %}{{ loop.index }}{% endif %}
 
-お名前　：{{ Shipping.name01 }} {{ Shipping.name02 }} 様
-フリガナ：{{ Shipping.kana01 }} {{ Shipping.kana02 }} 様
+姓名　：{{ Shipping.name01 }} {{ Shipping.name02 }} 様
+片假名：{{ Shipping.kana01 }} {{ Shipping.kana02 }} 様
 {% if Shipping.company_name %}
-会社名　：{{ Shipping.company_name }}
+公司名　：{{ Shipping.company_name }}
 {% endif %}
 {% if app.config.form_country_enable %}
     　国　　　：{{ Shipping.Country.name }}
     　ZIPCODE ：{{ Shipping.zip_code }}
 {% endif %}
-郵便番号：〒{{ Shipping.zip01 }}-{{ Shipping.zip02 }}
+邮编　　：〒{{ Shipping.zip01 }}-{{ Shipping.zip02 }}
 住所　　：{{ Shipping.Pref.name }}{{ Shipping.addr01 }}{{ Shipping.addr02 }}
-電話番号：{{ Shipping.tel01 }}-{{ Shipping.tel02 }}-{{ Shipping.tel03 }}
-FAX番号 ：{{ Shipping.fax01 }}-{{ Shipping.fax02 }}-{{ Shipping.fax03 }}
+电话号码：{{ Shipping.tel01 }}-{{ Shipping.tel02 }}-{{ Shipping.tel03 }}
+FAX号码 ：{{ Shipping.fax01 }}-{{ Shipping.fax02 }}-{{ Shipping.fax03 }}
 
-お届け日：{{ Shipping.shipping_delivery_date is empty ? '指定なし' : Shipping.shipping_delivery_date|date_format }}
-お届け時間：{{ Shipping.shipping_delivery_time|default('指定なし') }}
+送达日期：{{ Shipping.shipping_delivery_date is empty ? '指定なし' : Shipping.shipping_delivery_date|date_format }}
+送达时间：{{ Shipping.shipping_delivery_time|default('指定なし') }}
 
 {%  for ShipmentItem in Shipping.ShipmentItems %}
-商品コード: {{ ShipmentItem.product_code }}
-商品名: {{ ShipmentItem.product_name }}  {{ ShipmentItem.classcategory_name1 }}  {{ ShipmentItem.classcategory_name2 }}
+商品编号: {{ ShipmentItem.product_code }}
+商品名称: {{ ShipmentItem.product_name }}  {{ ShipmentItem.classcategory_name1 }}  {{ ShipmentItem.classcategory_name2 }}
 数量：{{ ShipmentItem.quantity|number_format }}
 
 {% endfor %}

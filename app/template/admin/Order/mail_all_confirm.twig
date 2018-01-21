@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['order', 'order_master'] %}
 
 {% block title %}受注管理{% endblock %}
-{% block sub_title %}メール通知{% endblock %}
+{% block sub_title %}邮件通知{% endblock %}
 
 {% block main %}
 <div id="confirm_wrap" class="row">
@@ -34,8 +34,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <input type="hidden" name="ids" value="{{ ids }}">
         <div id="confirm_box__body" class="box">
             <div id="confirm_box__header" class="box-header">
-                <h3 class="box-title">メール配信</h3>
-                <span class="text-danger">※本文は1通分の例です。受注情報は各メールごとに異なります。</span>
+                <h3 class="box-title">邮件配信</h3>
+                <span class="text-danger">※本文只是1通邮件的例子。根据受注信息不同，各邮件也将不同。</span>
             </div><!-- /.box-header -->
             <div id="confirm_box__body_inner" class="box-body">
                 <div id="confirm_box__subject" class="form-group">
@@ -67,8 +67,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         </div>
         <div id="confirm_box__footer" class="row">
             <div id="confirm_box__button_menu" class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center btn_area">
-                <p><button type="submit" class="btn btn-info btn-lg" name="mode" value="back">戻る</button></p>
-                <p><button type="submit" class="btn btn-primary btn-lg" name="mode" value="complete">メール送信</button></p>
+                <p><button type="submit" class="btn btn-info btn-lg" name="mode" value="back">返回</button></p>
+                <p><button type="submit" class="btn btn-primary btn-lg" name="mode" value="complete">邮件送信</button></p>
             </div>
         </div>
         </form>

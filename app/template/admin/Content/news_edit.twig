@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['content', 'news'] %}
 
 {% block title %}内容管理{% endblock %}
-{% block sub_title %}新着情報管理{% endblock %}
+{% block sub_title %}最新消息管理{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
 
@@ -58,7 +58,7 @@ $(function() {
         <div id="detail_wrap" class="col-md-9">
             <div id="detail_box" class="box">
                 <div id="detail_box__header" class="box-header">
-                    <h3 class="box-title">新着情報登録・編集</h3>
+                    <h3 class="box-title">最新消息登录・编辑</h3>
                 </div><!-- /.box-header -->
                 <form role="form" class="form-horizontal" name="form1" id="form1" method="post" action="?">
                     <div id="detail_box__body" class="box-body">
@@ -97,7 +97,7 @@ $(function() {
 
             <div id="detail_box__footer" class="row">
                 <div id="detail_box__back_button" class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center btn_area">
-                    <p><a href="{{ url('admin_content_news') }}">戻る</a></p>
+                    <p><a href="{{ url('admin_content_news') }}">返回</a></p>
                 </div>
             </div>
 

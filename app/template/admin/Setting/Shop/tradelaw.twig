@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 {% set menus = ['setting', 'shop', 'tradelaw'] %}
 
-{% block title %}ショップ設定{% endblock %}
+{% block title %}店铺设定{% endblock %}
 {% block sub_title %}特定商取引法管理{% endblock %}
 
 {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
@@ -75,12 +75,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                     {# 住所：住所2 #}
                     <div class="form-group {% if form.law_address.law_addr02.vars.errors is not empty  %}has-error{% endif %}">
                         <div id="detail_box__law_addr02" class="col-sm-offset-2 col-sm-9 col-lg-10">
-                            {{ form_widget(form.law_address.law_addr02, { attr : { placeholder : '番地・ビル名（例：1-3-5）' }}) }}
+                            {{ form_widget(form.law_address.law_addr02, { attr : { placeholder : '番地・楼名（例：1-3-5）' }}) }}
                             {{ form_errors(form.law_address.law_addr02) }}
                         </div>
                     </div>
 
-                    {# 電話番号 #}
+                    {# 电话号码 #}
                     <div id="detail_box__law_tel" class="form-group">
                         {{ form_label(form.law_tel) }}
                         <div class="col-sm-9 col-lg-10 input_tel form-inline">
@@ -128,7 +128,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                                 <div class="form-group">
                                     <div id="common_button_box__insert_button" class="row text-center">
                                         <div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
-                                            <button class="btn btn-primary btn-block btn-lg" type="submit">登録</button>
+                                            <button class="btn btn-primary btn-block btn-lg" type="submit">登录</button>
                                         </div>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 {% set menus = ['product', 'product_master'] %}
 
 {% block title %}商品管理{% endblock %}
-{% block sub_title %}商品登録(商品規格){% endblock %}
+{% block sub_title %}商品登录(商品规格){% endblock %}
 
 {% if not_product_class  %}
     {% form_theme form 'Form/bootstrap_3_horizontal_layout.html.twig' %}
@@ -62,7 +62,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             }
         });
 
-        // 登録チェックボックス
+        // 登录チェックボックス
         $('#add-all').click(function() {
             var addall = $('#add-all').prop('checked');
             if (addall) {
@@ -126,7 +126,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 
         $('#delete').click(function() {
-            if (confirm('一度削除したデータは、元に戻せません。\n削除しても宜しいですか？')) {
+            if (confirm('删除了之后就无法复原了。\n确定要删除吗？')) {
                 $('#mode').val('delete');
                 $('#product-class-form').submit();
                 return true;
@@ -151,7 +151,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                 <div id="edit_info_box__body" class="box-body" style="padding-bottom: 30px;">
                     {% if not_product_class  %}
                         {{ form_widget(form._token) }}
-                        <button type="submit" class="btn btn-primary pull-right">商品規格の設定</button>
+                        <button type="submit" class="btn btn-primary pull-right">设定商品规格</button>
                         <div id="edit_info_box__class_name" class="form-horizontal">
                             {{ form_widget(form.class_name1) }}
                             {{ form_errors(form.class_name1) }}
@@ -171,11 +171,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                             {% endfor %}
                         </div>
                     {% else %}
-                        <button type="button" id="delete" class="btn btn-default pull-right" name="mode" value="delete">商品規格を初期化</button>
+                        <button type="button" id="delete" class="btn btn-default pull-right" name="mode" value="delete">初始化商品规格</button>
                         <div id="edit_info_box__class_name">
-                          規格1 : <strong>{{ class_name1 }}</strong>
+                          规格1 : <strong>{{ class_name1 }}</strong>
                           {% if class_name2 is not null %}
-                          <br>規格2 : <strong>{{ class_name2 }}</strong>
+                          <br>规格2 : <strong>{{ class_name2 }}</strong>
                           {% endif %}
                         </div>
                     {% endif %}
@@ -195,8 +195,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
         <div id="result_box__body" class="box">
             {% if classForm.product_classes|length > 0 and has_class_category_flg %}
             <div id="result_box__header" class="box-header">
-                <button type="button" id="copy" class="btn btn-default pull-right btn-xs">1行目のデータをコピーする</button>
-                <h3 class="box-title">検索結果 <span class="normal"><strong>{{ classForm.product_classes|length }} 件</strong> が該当しました</span></h3>
+                <button type="button" id="copy" class="btn btn-default pull-right btn-xs">复制第一行的数据</button>
+                <h3 class="box-title">搜索結果 <span class="normal"><strong>一共有{{ classForm.product_classes|length }} 件</strong> </span></h3>
                 {% if error is not null %}
                     <div id="result_box__error" class="text-danger">{{ error.message }}</div>
                 {% endif %}
@@ -207,22 +207,22 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
                         <table class="table table-striped">
                             <thead>
                                 <tr id="result_box__header">
-                                    <th id="result_box__header_add" class="text-center">登録<input id="add-all" type="checkbox" value="0"></th>
-                                    <th id="result_box__header_class_category1">規格1</th>
-                                    <th id="result_box__header_class_category2">規格2</th>
-                                    <th id="result_box__header_code">商品コード</th>
-                                    <th id="result_box__header_stock">在庫数</th>
-                                    <th id="result_box__header_sale_limit">販売制限数</th>
-                                    <th id="result_box__header_price01">通常価格(円)</th>
-                                    <th id="result_box__header_price02">販売価格(円)</th>
+                                    <th id="result_box__header_add" class="text-center">登录<input id="add-all" type="checkbox" value="0"></th>
+                                    <th id="result_box__header_class_category1">规格1</th>
+                                    <th id="result_box__header_class_category2">规格2</th>
+                                    <th id="result_box__header_code">商品编号</th>
+                                    <th id="result_box__header_stock">在库数量</th>
+                                    <th id="result_box__header_sale_limit">贩卖限制数量</th>
+                                    <th id="result_box__header_price01">通常价格(日元)</th>
+                                    <th id="result_box__header_price02">贩卖价格(日元)</th>
                                     {% if BaseInfo.option_product_delivery_fee %}
-                                    <th id="result_box__header_delivery_fee">送料</th>
+                                    <th id="result_box__header_delivery_fee">运费</th>
                                     {% endif %}
-                                    <th id="result_box__header_delivery_date">お届け可能日</th>
+                                    <th id="result_box__header_delivery_date">送达可能日期</th>
                                     {% if BaseInfo.option_product_tax_rule %}
-                                    <th id="result_box__header_tax_rate">販売税率</th>
+                                    <th id="result_box__header_tax_rate">贩卖税率</th>
                                     {% endif %}
-                                    <th id="result_box__header_product_type">商品種別</th>
+                                    <th id="result_box__header_product_type">商品种别</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -293,7 +293,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
             </div><!-- /.box-body -->
             {% else %}
             <div id="result_box__error_message" class="box-header">
-                <h3 class="box-title">検索条件に該当するデータがありませんでした。</h3>
+                <h3 class="box-title">没有符合搜索条件的数据。</h3>
             </div><!-- /.box-header -->
             {% endif %}
         </div><!-- /.box -->
@@ -304,12 +304,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 <div id="edit_box__footer" class="row">
     <div id="edit_box__button_menu" class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center btn_area">
 {% if not_product_class  %}
-        <button type="submit" class="btn btn-primary btn-lg btn-block" name="mode" value="edit">登録</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" name="mode" value="edit">登录</button>
 {% else %}
         <input id="mode" type="hidden" name="mode">
         <button type="submit" class="btn btn-primary btn-lg btn-block" name="mode" value="update">更新</button>
 {% endif %}
-        <p><a href="{{ url('admin_product_product_edit', {id : Product.id}) }}">商品登録に戻る</a></p>
+        <p><a href="{{ url('admin_product_product_edit', {id : Product.id}) }}">返回商品登录</a></p>
     </div>
 </div>
 </form>
