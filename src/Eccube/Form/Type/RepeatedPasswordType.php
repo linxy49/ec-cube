@@ -63,7 +63,7 @@ class RepeatedPasswordType extends AbstractType
             ),
             'first_options' => array(
                 'attr' => array(
-                    'placeholder' => '半角英数字記号'.$this->config['password_min_len'].'～'.$this->config['password_max_len'].'文字',
+                    'placeholder' => '半角英数字记号'.$this->config['password_min_len'].'～'.$this->config['password_max_len'].'文字',
                 ),
             ),
             'second_options' => array(
